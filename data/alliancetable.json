@@ -1,0 +1,7 @@
+{
+    "tn_share2021": [{"party": "AIADMK +", "won": 134, "leading": 0, "total": 134}, {"party": "DMK +", "won": 89, "leading": 0, "total": 89}], 
+    "as_share2021": [{"party": "BJP +", "won": 60, "leading": 0, "total": 60}, {"party": "INC +", "won": 26, "leading": 0, "total": 26}, {"party": "Others", "won": 13, "leading": 0, "total": 13}],
+    "kl_share2021": [{"party": "CPIM +", "won": 58, "leading": 0, "total": 58}, {"party": "INC +", "won": 22, "leading": 0, "total": 22}],
+    "pd_share2021": [{"party": "INC +", "won": 15, "leading": 0, "total": 15}, {"party": "AINRC +", "won": 8, "leading": 0, "total": 8}, {"party": "Others", "won": 4, "leading": 0, "total": 4}],
+    "wb_share2021": [{"party": "TMC +", "won": 211, "leading": 0, "total": 211}, {"party": "CPI(M)", "won": 26, "leading": 0, "total": 26}, {"party": "BJP +", "won": 3, "leading": 0, "total": 3}, {"party": "Others", "won": 10, "leading": 0, "total": 10}]
+  }
