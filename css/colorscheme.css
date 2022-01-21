@@ -42,13 +42,13 @@
 
 /* ________________ */
 
-.y2021.as .BJP {
+.y2021.as .BJP, .y2017 .BJP {
   fill: #ffaa2e;
 }
-.y2021.as .INC {
+.y2021.as .INC, .y2017 .INC  {
   fill: #b71c24;
 }
-.y2021.as .Others {
+.y2021.as .Others, .y2017 .Others {
   fill: #797979;
 }
 
@@ -79,7 +79,7 @@
 }
 
 /* ________________ */
-.y2021.wb .TMC {
+.y2021.wb .TMC, .y2017 .TMC {
   fill: #006837;
 }
 .y2021.wb .BJP {
@@ -154,7 +154,11 @@
 .y2016.pd .DMK {
   fill: #b71c24;
 }
-
+.AAP,
+.aap .party-score {
+  fill: #4c9b7a;
+  color: #4c9b7a;
+}
 /* .y2021.pd .INC {
   fill: #006837;
 } */

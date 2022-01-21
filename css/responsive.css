@@ -1,4 +1,15 @@
 @media screen and (max-width: 560px) {
+  .tf_wrap .stFilter {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .tf_wrap .stFilter li {
+    display: inline-block;
+  }
+  .tf_wrap a.dashfilters {
+    margin: 3px 6px;
+  }
   .tf_wrap .dash-header {
     align-items: flex-start;
     flex-direction: column;
