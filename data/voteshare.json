@@ -9,5 +9,9 @@
     "as_share2021": [{"party":"BJP","leading%":33.6},{"party":"INC","leading%":30},{"party":"AIUDF","leading%":9.4},{"party":"AGP","leading%":8},{"party":"UPPL","leading%":3.4},{"party":"IND","leading%":6},{"party":"Others","leading%":9.6}],
     "kl_share2021": [{"party":"CPIM","leading%":25.5},{"party":"INC","leading%":25.2},{"party":"CPI","leading%":7.6},{"party":"IML","leading%":8.3},{"party":"IND","leading%":5.8},{"party":"Others","leading%":27.6}],
     "pd_share2021": [{"party":"AINRC","leading%":26.2},{"party":"DMK","leading%":18.8},{"party":"INC","leading%":15.9},{"party":"BJP","leading%":13.8},{"party":"AIADMK","leading%":4.2},{"party":"Others","leading%":21.1}],
-    "wb_share2021": [{"party":"AITC","leading%":48.5},{"party":"BJP","leading%":38.5},{"party":"CPIM","leading%":4.8},{"party":"INC","leading%":3},{"party":"RSMPA","leading%":1.4},{"party":"Others","leading%":3.8}]    
+    "wb_share2021": [{"party":"AITC","leading%":48.5},{"party":"BJP","leading%":38.5},{"party":"CPIM","leading%":4.8},{"party":"INC","leading%":3},{"party":"RSMPA","leading%":1.4},{"party":"Others","leading%":3.8}],
+    
+    "uk_share2017": [{"party":"BJP","leading%":46.51296937},{"party":"INC","leading%":33.49172967},{"party":"BSP","leading%":6.984894364},{"party":"Others","leading%":13.0104066}],    
+    "mn_share2017": [{"party":"BJP","leading%":36.28154827},{"party":"NPF","leading%":7.168383118},{"party":"NPP","leading%":5.050980865},{"party":"INC","leading%":35.10644009},{"party":"Others","leading%":16.39264766}],    
+    "ga_share2017": [{"party":"BJP","leading%":32.48011386},{"party":"INC+","leading%":31.83288657},{"party":"AAP","leading%":6.267081125},{"party":"TMC+","leading%":11.27354248},{"party":"Others","leading%":18.14637596}]    
 }
