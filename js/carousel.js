@@ -33,7 +33,8 @@ function stCarousel(selector, datasource, statn, stName, keySel, keySource, stc)
             html += '</div>'
             html += '<span class="trailingindicator">Trailing</span>'        
             html += '<div class="trailingcand">'
-            html += '<h4>'+trailingname+' <span>'+trailingparty+'</span></h4>'
+            html += '<h4>'+trailingname+' </h4>'
+            // html += '<h4>'+trailingname+' <span>'+trailingparty+'</span></h4>'
             //html += '<p>'+trailingmargin.toLocaleString('en-IN')+'</p>'
             html += '</div>'
             html += '</div>'        
@@ -84,8 +85,14 @@ function stCarousel(selector, datasource, statn, stName, keySel, keySource, stc)
     
 }
 
-stCarousel("#tn-carousel", "data/const2021data.json", "tn_conswise", "Tamil Nadu", "#tn-keycarous" ,"data/keycandidate.json", "tn");
-stCarousel("#as-carousel", "data/const2021data.json", "as_conswise", "Assam", "#as-keycarous" ,"data/keycandidate.json", "as");
-stCarousel("#up-carousel", "data/const2016data.json", "up_conswise", "Uttar Pradesh", "#wb-keycarous" ,"data/keycandidate.json", "wb");
-stCarousel("#kl-carousel", "data/const2021data.json", "kl_conswise", "Kerala", "#kl-keycarous" ,"data/keycandidate.json", "kl");
-stCarousel("#pd-carousel", "data/const2021data.json", "pd_conswise", "Puducherry", "#pd-keycarous" ,"data/keycandidate.json", "pd");
+// stCarousel("#tn-carousel", "data/const2021data.json", "tn_conswise", "Tamil Nadu", "#tn-keycarous" ,"data/keycandidate.json", "tn");
+// stCarousel("#as-carousel", "data/const2021data.json", "as_conswise", "Assam", "#as-keycarous" ,"data/keycandidate.json", "as");
+// stCarousel("#up-carousel", "data/const2016data.json", "up_conswise", "Uttar Pradesh", "#wb-keycarous" ,"data/keycandidate.json", "wb");
+// stCarousel("#kl-carousel", "data/const2021data.json", "kl_conswise", "Kerala", "#kl-keycarous" ,"data/keycandidate.json", "kl");
+// stCarousel("#pd-carousel", "data/const2021data.json", "pd_conswise", "Puducherry", "#pd-keycarous" ,"data/keycandidate.json", "pd");
+
+stCarousel("#up-carousel", "data/const2017data.json", "up_conswise", "Uttar Pradesh", "#wb-keycarous" ,"data/keycandidate.json", "wb");
+stCarousel("#uk-carousel", "data/const2017data.json", "uk_conswise", "Uttar Pradesh", "#wb-keycarous" ,"data/keycandidate.json", "wb");
+stCarousel("#pb-carousel", "data/const2017data.json", "pb_conswise", "Punjab", "#wb-keycarous" ,"data/keycandidate.json", "wb");
+stCarousel("#mn-carousel", "data/const2017data.json", "mn_conswise", "Manipur", "#wb-keycarous" ,"data/keycandidate.json", "wb");
+stCarousel("#ga-carousel", "data/const2017data.json", "ga_conswise", "Uttar Pradesh", "#wb-keycarous" ,"data/keycandidate.json", "wb");

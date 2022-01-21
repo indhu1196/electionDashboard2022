@@ -26,7 +26,7 @@ var partycolors = {
     "NISHAD":	"green",
 }
 
-function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, constBox){
+function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, constBox, dsrc, dcode, defdist){
     var constwisetrenddata = (function() {
         constwisetrenddata = null;
         jQuery.ajax({
@@ -36,11 +36,26 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
             'cache': false,
             'url': datasource,
             'success': function(data) {
-                console.log(data)
+                // console.log(data)
                 constwisetrenddata = data[stCode];
             }
         });
         return constwisetrenddata;
+    })();
+    var economicFactorData = (function() {
+        economicFactorData = null;
+        jQuery.ajax({
+            'async': false,
+            'global': false,
+            'dataType': 'json',
+            'cache': false,
+            'url': dsrc,
+            'success': function(data) {
+                // console.log(data)
+                economicFactorData = data[dcode];
+            }
+        });
+        return economicFactorData;
     })();
     // var width = 430, height = 350; 
     var width = 450, height = 600; 
@@ -76,10 +91,8 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
         .projection(projection)
     
     d3.json(source, function(error, stateShape){
-        
         // Converts and extracts topojson to map
         var stateconst = topojson.feature(stateShape, stateShape.objects.collection).features;
-        // console.log(stateconst);
 
         svg.selectAll(".const")
             .data(stateconst).enter().append("path")
@@ -92,53 +105,51 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
             .on('mouseover', tool_tip.show) // to enable d3tip tooltips
             .on('mouseout', tool_tip.hide) // to disable d3tip tooltips
             .attr('data-color', function(d,i){
-                // console.log(settings.datasource)
                 var fdTrendData2017 = constwisetrenddata.filter(function(obj){
                     return obj["constNo"] === d.properties.AC_NO;
-                })
-                // console.log(fdTrendData2017);
-                // console.log(partycolors[party_abrev[fdTrendData2017[0]["leadingParty"]]])
+                })                
                 if(fdTrendData2017[0] !== undefined){
                     // enter the filtered data in abreviation and colors object
-                    return partycolors[party_abrev[fdTrendData2017[0]["leadingParty"]]];
+                    // return partycolors[party_abrev[fdTrendData2017[0]["leadingParty"]]];
+                    return partycolors[fdTrendData2017[0]["leadingParty"]];
                 }else{
                     return "#FFFFFF";
-                }
-                
+                }                
             })
             .attr('stroke-opacity', "1")
             .attr("data-constcode", function(d,i){
                 return d.properties.AC_NO;
             })
-            .attr('fill', function(d,i){
-                
+            .attr("data-id", function (d) { 
                 var fdTrendData2017 = constwisetrenddata.filter(function(obj){
                     return obj["constNo"] === d.properties.AC_NO;
                 })
-
+                if(fdTrendData2017[0] !== undefined){
+                    return fdTrendData2017[0]["District"];
+                } else {
+                    return "NA";
+                }
+            })
+            .attr('fill', function(d,i){
+                var fdTrendData2017 = constwisetrenddata.filter(function(obj){
+                    return obj["constNo"] === d.properties.AC_NO;
+                })
                 // console.log(fdTrendData2017[0])
                 if(fdTrendData2017[0] !== undefined){
-                    return partycolors[party_abrev[fdTrendData2017[0]["leadingParty"]]];
+                    // return partycolors[party_abrev[fdTrendData2017[0]["leadingParty"]]];
+                    return partycolors[fdTrendData2017[0]["leadingParty"]];
                 }else{
                     return "#FFFFFF";
                 }
                 // enter the filtered data in abreviation and colors object
                 // return partycolors[party_abrev[fdTrendData2017[0]["leadingParty"]]];
-                
             })
             .on('click', function(d,i){
-                // console.log(d.properties.AC_NO)
-                
-                // d3.selectAll(".const").attr("stroke", "#ccc").attr("stroke-width", "0.2")
-
-                // d3.select(".c"+d.properties.AC_NO).attr("stroke", "black").attr("stroke-width", "1.5")
-
                 $(dropSelect).val(d.properties.AC_NO).trigger('change')
-
-                // d3.select(this).attr("fill", "red");
                 filterNDisplay2017(d.properties.AC_NO);
+                var dist = $(this).attr("data-id");
+                economicFilter(dist);
                 focusFun(d.properties.AC_NO)
-                
             })
 
             function focusFun(value){
@@ -155,7 +166,7 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
             // d3.select(".c"+settings.defaultconst).attr("stroke", "black").attr("stroke-width", "1.5")
             focusFun(settings.defaultconst)
             filterNDisplay2017(settings.defaultconst)
-
+            economicFilter(defdist);
             var selectDropdown = d3.select(dropSelect)
 
             selectDropdown.html(null);
@@ -167,24 +178,31 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
                     // console.log(d.properties.AC_NO) 
                     return d.properties.AC_NO; 
                 })
-                // .attr("data-id", function (d) { 
-                //     return d.properties.AC_NO; 
-                // })
+                .attr("data-id", function (d) { 
+                    var fdTrendData2017 = constwisetrenddata.filter(function(obj){
+                        return obj["constNo"] === d.properties.AC_NO
+                    })
+                    if(fdTrendData2017[0] !== undefined){
+                        return fdTrendData2017[0]["District"];
+                    } else {
+                        return "NA";
+                    }
+                })
                 .text(function (d) {
-                    // console.log(d.properties.AC_NAME);
                     return d.properties.AC_NAME;
                 });
 
             $(dropSelect).val(settings.defaultconst).trigger('change')
             $(dropSelect).on('change', function(d,i) {
                 var chosenOption = $(dropSelect).val();
-                // console.log(chosenOption)
+                var optValue = $(dropSelect + " option:selected").attr("data-id");
                 // d3.selectAll(".const").attr("stroke", "#ccc").attr("stroke-width", "0.2")
-                        
+                console.log(optValue)      
                 var fdTrendData2017 = constwisetrenddata.filter(function(obj){
                     if(obj["constNo"] === parseInt(chosenOption)) {
                         focusFun(parseInt(chosenOption))
                         filterNDisplay2017(parseInt(chosenOption))
+                        economicFilter(optValue)
                     }
                 })
             })
@@ -195,78 +213,73 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
         var fdTrendData2017 = constwisetrenddata.filter(function(obj){
             return obj["constNo"] === acno;
         })
-        // console.log(fdTrendData2017)
-            d3.select(constBox + " .const_name").html(fdTrendData2017[0]["constituency"])
-            d3.select(constBox + " .status").html(fdTrendData2017[0]["status"])
-            d3.select(constBox + " .candName").html(fdTrendData2017[0]["leadingCandidate"] + " <span>("+party_abrev[fdTrendData2017[0]["leadingParty"]]+")</span>")
-            d3.select(constBox + " .trailingCandName").html(fdTrendData2017[0]["trailingCandidate"] + " <span>("+party_abrev[fdTrendData2017[0]["trailingParty"]]+")</span>")
-            d3.select(constBox + " .winMargin").html(fdTrendData2017[0]["margin"].toLocaleString('en-IN'))
+        // console.log(fdTrendData2017[0]["trailingCandidate"])
+            d3.select(constBox + " .const_name").html(fdTrendData2017[0]["constituency"]);
+            d3.select(constBox + " .status").html(fdTrendData2017[0]["status"]);
+            d3.select(constBox + " .candName").html(fdTrendData2017[0]["leadingCandidate"] + " <span>("+[fdTrendData2017[0]["leadingParty"]]+")</span>");
+            d3.select(constBox + " .trailingCandName").html(fdTrendData2017[0]["trailingCandidate"]);
+            d3.select(constBox + " .winMargin").html(fdTrendData2017[0]["margin"].toLocaleString('en-IN'));
     }
+
+    function economicFilter(district){
+        var eFData2017 = economicFactorData.filter(function(obj){
+            return obj["District"] === district;
+        })
+        // console.log(eFData2017)
+        if(eFData2017[0] !== undefined){
+            d3.select(constBox + " .malePop").html(eFData2017[0]["Total Male"].toLocaleString('en-IN'))
+            d3.select(constBox + " .femalePop").html(eFData2017[0]["Total Female"].toLocaleString('en-IN'))
+            d3.select(constBox + " .maleEdu").html(eFData2017[0]["Male Literates (Census 2011)"].toLocaleString('en-IN'))
+            d3.select(constBox + " .femaleEdu").html(eFData2017[0]["Female Literates (Census 2011)"].toLocaleString('en-IN'))
+        } else {
+            d3.select(constBox + " .malePop").html("-")
+            d3.select(constBox + " .femalePop").html("-")
+            d3.select(constBox + " .maleEdu").html("-")
+            d3.select(constBox + " .femaleEdu").html("-")
+        }
+    }
+
 
 } // end of mapfunction
 
-drawAssemblyMap(".tn-map2016", 'data/const2016data.json', "tn_conswise", {
-    statecode: 'S22', // Statecode for map
-    vhcode: 'tn', // state vehicle code
-    defaultconst: 221, // state vehicle code
-    mapsource: 'maps/tamilnadu.json', // add map topojson
-    scale: 5100, // size adjust until it sits well
-    center: [78.3, 10.8] // enter lat long from google of UP
-}, "#constList2016", "#tn-2016");
-drawAssemblyMap(".tn-map2021", 'data/const2021data.json', "tn_conswise",  {
-    statecode: 'S22', // Statecode for map
-    vhcode: 'tn', // state vehicle code
-    defaultconst: 221, // state vehicle code
-    mapsource: 'maps/tamilnadu.json', // add map topojson
-    scale: 5100, // size adjust until it sits well
-    center: [78.3, 10.8] // enter lat long from google of UP
-}, "#constList2021", "#tn-2021");
-drawAssemblyMap(".kl-map2016", 'data/const2016data.json', "kl_conswise", {
-    statecode: 'S11', // Statecode for map
-    vhcode: 'kl', // state vehicle code
-    defaultconst: 21, // state vehicle code
-    mapsource: 'maps/kerala.json', // add map topojson
-    scale: 5100, // size adjust until it sits well
-    center: [76.3, 10.8] // enter lat long from google of UP
-}, "#klconstList2016", "#kl-2016");
-drawAssemblyMap(".kl-map2021", 'data/const2021data.json', "kl_conswise",  {
-    statecode: 'S11', // Statecode for map
-    vhcode: 'kl', // state vehicle code
-    defaultconst: 21, // state vehicle code
-    mapsource: 'maps/kerala.json', // add map topojson
-    scale: 5100, // size adjust until it sits well
-    center: [76.3, 10.8] // enter lat long from google of UP
-}, "#klconstList2021", "#kl-2021");
-drawAssemblyMap(".pd-map2016", 'data/const2016data.json', "pd_conswise",  {
-    statecode: 'U07', // Statecode for map
-    vhcode: 'pd', // state vehicle code
-    defaultconst: 21, // state vehicle code
-    mapsource: 'maps/puducherry.json', // add map topojson
-    scale: 21500, // size adjust until it sits well
-    center: [79.8, 11.5] // enter lat long from google of UP
-}, "#pdconstList2016", "#pd-2016");
-drawAssemblyMap(".pd-map2021", 'data/const2021data.json', "pd_conswise",  {
-    statecode: 'U07', // Statecode for map
-    vhcode: 'pd', // state vehicle code
-    defaultconst: 21, // state vehicle code
-    mapsource: 'maps/puducherry.json', // add map topojson
-    scale: 21500, // size adjust until it sits well
-    center: [79.8, 11.5] // enter lat long from google of UP
-}, "#pdconstList2021", "#pd-2021");
-drawAssemblyMap(".up-map2017", 'data/const2016data.json', "up_conswise", {
+
+drawAssemblyMap(".up-map2017", 'data/const2017data.json', "up_conswise", {
     statecode: 'S24', // Statecode for map
     vhcode: 'up', // state vehicle code
     defaultconst: 21, // state vehicle code
     mapsource: 'maps/UP.json', // add map topojson
     scale: 2500, // size adjust until it sits well
     center: [80.9462, 27.2] // enter lat long from google of UP
-}, "#upconstList2017", "#up-2017");
-drawAssemblyMap(".up-map2021", 'data/const2016data.json', "up_conswise",  {
-    statecode: 'S24', // Statecode for map
-    vhcode: 'kl', // state vehicle code
+}, "#upconstList2017", "#up-2017", "data/economicFactors.json", "upEconomic");
+drawAssemblyMap(".uk-map2017", 'data/const2017data.json', "uk_conswise", {
+    statecode: 'S02', // Statecode for map
+    vhcode: 'uk', // state vehicle code
     defaultconst: 21, // state vehicle code
-    mapsource: 'maps/UP.json', // add map topojson
-    scale: 2500, // size adjust until it sits well
-    center: [80.9462, 27.2] // enter lat long from google of UP
-}, "#upconstList2021", "#up-2021");
-
+    mapsource: 'maps/uttarakhand.json', // add map topojson
+    scale: 4500, // size adjust until it sits well
+    center: [78.4, 31.2] // enter lat long from google of UP
+}, "#ukconstList2017", "#uk-2017", "data/economicFactors.json", "ukEconomic");
+drawAssemblyMap(".mn-map2017", 'data/const2017data.json', "mn_conswise", {
+    statecode: 'S02', // Statecode for map
+    vhcode: 'mn', // state vehicle code
+    defaultconst: 21, // state vehicle code
+    mapsource: 'maps/manipur.json', // add map topojson
+    scale: 10500, // size adjust until it sits well
+    center: [93.9462, 24.5] // enter lat long from google of UP
+}, "#mnconstList2017", "#mn-2017", "data/economicFactors.json", "mnEconomic", "Imphal West");
+drawAssemblyMap(".ga-map2017", 'data/const2017data.json', "ga_conswise", {
+    statecode: 'S30', // Statecode for map
+    vhcode: 'ga', // state vehicle code
+    defaultconst: 21, // state vehicle code
+    mapsource: 'maps/goaMap.json', // add map topojson
+    scale: 22500, // size adjust until it sits well
+    center: [74.2, 15.2] // enter lat long from google of UP
+}, "#gaconstList2017", "#ga-2017", "data/economicFactors.json", "gaEconomic");
+drawAssemblyMap(".pb-map2017", 'data/const2017data.json', "pb_conswise", {
+    statecode: 'S30', // Statecode for map
+    vhcode: 'pb', // state vehicle code
+    defaultconst: 21, // state vehicle code
+    mapsource: 'maps/Punjab.json', // add map topojson
+    scale: 7500, // size adjust until it sits well
+    center: [75.84, 30.9] // enter lat long from google of UP
+}, "#pbconstList2017", "#pb-2017", "data/economicFactors.json", "pbEconomic");
