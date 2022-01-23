@@ -264,8 +264,8 @@ drawAssemblyMap(".mn-map2017", 'data/const2017data.json', "mn_conswise", {
     vhcode: 'mn', // state vehicle code
     defaultconst: 21, // state vehicle code
     mapsource: 'maps/manipur.json', // add map topojson
-    scale: 10500, // size adjust until it sits well
-    center: [93.9462, 24.5] // enter lat long from google of UP
+    scale: 12500, // size adjust until it sits well
+    center: [93.9462, 25] // enter lat long from google of UP
 }, "#mnconstList2017", "#mn-2017", "data/economicFactors.json", "mnEconomic", "Imphal West");
 drawAssemblyMap(".ga-map2017", 'data/const2017data.json', "ga_conswise", {
     statecode: 'S30', // Statecode for map
