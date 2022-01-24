@@ -66,15 +66,16 @@
 }
 .tf_wrap a.dashfilters,
 .tf_wrap button.searchBtn {
-  background-color: #cccc;
-  color: #999;
+  background-color: #999;
+  color: #fff;
   border: none;
   border-radius: 0;
   font-weight: 800;
   font-size: 12px;
   margin: 0 6px;
   padding: 3px 7px;
-  line-height: 15px;
+  /* line-height: 15px; */
+  line-height: 25px;
   text-transform: uppercase;
   width: auto;
 }
@@ -132,7 +133,8 @@ path.const:hover {
   -moz-border-radius: 3px;
   border-radius: 3px;
   text-align: center;
-  max-width: 300px;
+  /* max-width: 300px; */
+  max-width: 400px;
 }
 .owl-controls .owl-page,
 .owl-controls .owl-buttons div {
@@ -152,7 +154,8 @@ path.const:hover {
 
 .contituency-items {
   width: 100%;
-  height: 140px;
+  /* height: 140px; */
+  height: 180px;
   background-color: #f8f8f8;
   border-radius: 14px;
   box-shadow: 0px 1px 5px 2px rgba(120, 120, 120, 0.41);
@@ -165,11 +168,13 @@ path.const:hover {
 }
 .contituency-items h3 {
   font-family: "Rubik", sans-serif;
-  font-size: 10px;
+  /* font-size: 10px; */
+  font-size: 13px;
   font-weight: 400;
   background-color: #e8e8e8;
-  height: 20px;
-  line-height: 20px;
+  /* height: 20px; */
+  height: 26px;
+  line-height: 23px;
   padding: 0 0 0 15px;
   margin: 0 0 0px 0;
 }
@@ -180,11 +185,12 @@ path.const:hover {
 
 .contituency-items .leadingcand,
 .contituency-items .trailingcand {
-  padding: 0 15px;
+  padding: 0 10px;
   display: grid;
-  grid-template-columns: 75% 25%;
+  /* grid-template-columns: 75% 25%; */
+  grid-template-columns: 80% 20%;
   align-items: baseline;
-  /* margin-bottom: 10px; */
+  margin-bottom: 10px;
   /*margin-top: -18px;*/
 }
 .contituency-items .trailingcand {
@@ -197,24 +203,28 @@ path.const:hover {
   color: #999;
   font-size: 15px;
 }
+.contituency-items .leadingcand p {
+  color: #008000;
+}
 
 .contituency-items .leadingcand h4,
 .contituency-items .trailingcand h4 {
   font-family: "Rubik", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   margin: 0;
   position: relative;
-  line-height: 14px;
+  line-height: 20px;
 }
 
 .leadingindicator,
 .trailingindicator {
   font-family: "Rubik", sans-serif;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 500;
   position: relative;
-  padding: 0 26px;
+  /* padding: 0 26px; */
+  padding: 0 21px;
   text-transform: uppercase;
 }
 .leadingindicator::before,
@@ -224,7 +234,8 @@ path.const:hover {
   height: 6px;
   width: 6px;
   top: 3px;
-  left: 16px;
+  /* left: 16px; */
+  left: 11px;
   border-radius: 50%;
 }
 
@@ -256,10 +267,12 @@ path.const:hover {
 } */
 .contituency-items .leadingcand span,
 .contituency-items .trailingcand span {
-  display: block;
-  font-size: 11px;
+  /* display: block; */
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 13px;
   font-weight: 400;
-  color: #999;
+  color: #000;
 }
 
 .carousel-item {
@@ -291,7 +304,8 @@ path.const:hover {
 }
 .candidate-items {
   width: 98%;
-  height: 90px;
+  /* height: 90px; */
+  height: 125px;
   background-color: #f8f8f8;
   border-radius: 14px;
   box-shadow: 0px 1px 5px 2px rgba(120, 120, 120, 0.41);
@@ -317,16 +331,16 @@ path.const:hover {
 
 .candidate-items h4 {
   font-family: "Rubik", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   margin: 0;
   position: relative;
-  line-height: 14px;
+  line-height: 18px;
 }
 
 .candidate-items h4 span {
   display: block;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 400;
   color: #999;
 }
@@ -334,7 +348,7 @@ path.const:hover {
 .candidate-items .cand-age {
   font-family: "Rubik", sans-serif;
   display: block;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 400;
   color: #008000;
   margin: 5px 0;
@@ -362,7 +376,8 @@ path.const:hover {
 }
 .candidate-items .cand-cont {
   font-family: "Rubik", sans-serif;
-  font-size: 11px;
+  font-size: 15px;
+  line-height: 18px;
   font-weight: 600;
   margin: 5px 0;
   display: inline-block;
@@ -570,8 +585,10 @@ path.const:hover {
 
 .const-box p {
   margin: 15px 0 0 0;
-  font-size: 12px;
-  line-height: 14px;
+  /* font-size: 12px;
+  line-height: 14px; */
+  font-size: 15px;
+  line-height: 18px;
   color: green;
 }
 
@@ -1006,7 +1023,7 @@ ul#letters-listing li.disabled a {
 /* Table */
 
 .table {
-  font-size: 14px;
+  font-size: 16px;
   text-align: left;
 }
 .table#map-table {
@@ -1176,4 +1193,7 @@ p,
   display: flex;
   justify-content: space-evenly;
   text-align-last: center;
+}
+.popBox .popCount:nth-child(2) {
+  margin: 0 0 15px 0;
 }

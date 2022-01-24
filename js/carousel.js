@@ -1,6 +1,6 @@
 function stCarousel(selector, datasource, statn, stName, keySel, keySource, stc) {
     $(selector).owlCarousel({
-        itemsDesktop : [1199,4],
+        itemsDesktop : [1199,3],
         itemsDesktopSmall : [980,3],
         itemsTablet: [768,2],
         itemsTabletSmall: false,
@@ -28,7 +28,7 @@ function stCarousel(selector, datasource, statn, stName, keySel, keySource, stc)
             html += '<h3> '+ stName +' | <span>'+constituencyname+'</span> </h3>'
             html += '<span class="leadingindicator">Winning</span>'
             html += '<div class="leadingcand">'
-            html += '<h4>'+leadingname+'<span>'+leadingparty+'</span></h4>'
+            html += '<h4>'+leadingname+' <span> ('+leadingparty+') </span></h4>'
             html += '<p>'+leadingmargin.toLocaleString('en-IN')+'</p>'
             html += '</div>'
             html += '<span class="trailingindicator">Trailing</span>'        

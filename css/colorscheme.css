@@ -34,7 +34,7 @@
   fill: #b71c24;
 }
 .y2016.tn .INC {
-  fill: #b71c24;
+  fill: #166a2f;
 }
 .y2016.tn .IML {
   fill: #b71c24;
@@ -43,20 +43,20 @@
 /* ________________ */
 
 .y2021.as .BJP, .y2017 .BJP {
-  fill: #ffaa2e;
+  fill: #F47216;
 }
 .y2021.as .INC, .y2017 .INC  {
-  fill: #b71c24;
+  fill: #166a2f;
 }
 .y2021.as .Others, .y2017 .Others {
   fill: #797979;
 }
 
 .y2016.as .BJP {
-  fill: #ffaa2e;
+  fill: #F47216;
 }
 .y2016.as .INC {
-  fill: #b71c24;
+  fill: #166a2f;
 }
 
 .y2016.as .AGP {
@@ -83,7 +83,7 @@
   fill: #006837;
 }
 .y2021.wb .BJP {
-  fill: #ffaa2e;
+  fill: #F47216;
 }
 .y2021.wb .Others {
   fill: #797979;
@@ -93,7 +93,7 @@
   fill: #006837;
 }
 .y2016.wb .INC {
-  fill: #b71c24;
+  fill: #166a2f;
 }
 .y2016.wb .CPIM {
   fill: #b71c24;
@@ -103,7 +103,7 @@
 }
 
 .y2016.wb .BJP {
-  fill: #ffaa2e;
+  fill: #F47216;
 }
 
 /* ________________ */
@@ -159,6 +159,9 @@
   fill: #4c9b7a;
   color: #4c9b7a;
 }
+.y2017.mn .NPP {
+  fill: #364586;
+}
 /* .y2021.pd .INC {
   fill: #006837;
 } */
@@ -213,3 +216,4 @@
   color: #797979;
   stroke: #797979;
 } */ ;
+

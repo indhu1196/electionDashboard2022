@@ -5,6 +5,6 @@
     "pd_share2021": [{"party": "INC +", "won": 15, "leading": 0, "total": 15}, {"party": "AINRC +", "won": 8, "leading": 0, "total": 8}, {"party": "Others", "won": 4, "leading": 0, "total": 4}],
     "wb_share2021": [{"party": "TMC +", "won": 211, "leading": 0, "total": 211}, {"party": "CPI(M)", "won": 26, "leading": 0, "total": 26}, {"party": "BJP +", "won": 3, "leading": 0, "total": 3}, {"party": "Others", "won": 10, "leading": 0, "total": 10}],
     
-    "mn_share2017": [{"party":"BJP", "won":21,"leading":0,"total":60},{"party":"NPF", "won":4,"leading":0,"total":15},{"party":"NPP","won":4,"leading":0,"total":20},{"party":"INC","won":28,"leading":0,"total":59},{"party":"Others","won":3,"leading":0,"total":172}],
+    "mn_share2017": [{"party":"BJP", "won":21,"leading":0,"total":21},{"party":"NPF", "won":4,"leading":0,"total":4},{"party":"NPP","won":4,"leading":0,"total":4},{"party":"INC","won":28,"leading":0,"total":28},{"party":"Others","won":3,"leading":0,"total":3}],
     "ga_share2017": [{"party":"BJP", "won":13,"leading":0,"total":36},{"party":"INC +", "won":20,"leading":0,"total":41},{"party":"AAP","won":0,"leading":0,"total":39},{"party":"TMC +","won":3,"leading":0,"total":25},{"party":"Others","won":4,"leading":0,"total":150}]
   }

@@ -17,13 +17,15 @@ var party_abrev = {
 var partycolors = { 
     "DMK":	"green",
     "AIADMK":	"#ff9900",
-    "BJP":	"#ff9900",
+    "BJP":	"#F47216",
     "SP":	"red",
     "IND":	"red",
     "Congress":	"red",
     "IUML":	"grey",
     "RLD":	"blue",
     "NISHAD":	"green",
+    "INC": "#166a2f",
+    "NPP": "#364586"
 }
 
 function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, constBox, dsrc, dcode, defdist){
@@ -272,8 +274,8 @@ drawAssemblyMap(".ga-map2017", 'data/const2017data.json', "ga_conswise", {
     vhcode: 'ga', // state vehicle code
     defaultconst: 21, // state vehicle code
     mapsource: 'maps/goaMap.json', // add map topojson
-    scale: 22500, // size adjust until it sits well
-    center: [74.2, 15.2] // enter lat long from google of UP
+    scale: 25500, // size adjust until it sits well
+    center: [74.2, 15.4] // enter lat long from google of UP
 }, "#gaconstList2017", "#ga-2017", "data/economicFactors.json", "gaEconomic");
 drawAssemblyMap(".pb-map2017", 'data/const2017data.json', "pb_conswise", {
     statecode: 'S30', // Statecode for map

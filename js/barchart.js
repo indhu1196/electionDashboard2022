@@ -4,7 +4,8 @@ var barcolors={
     "CPI": "red",
     "IUML": "blue",
     "IND": "grey",
-    "Others": "grey"
+    "Others": "grey",
+    "BJP": "#F47216"
 }
 function stackedBar(selector, dataSource, stCode, props, tipSel) {
     var voteShare = (function() {
