@@ -115,7 +115,7 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
                     // return partycolors[party_abrev[fdTrendData2017[0]["leadingParty"]]];
                     return partycolors[fdTrendData2017[0]["leadingParty"]];
                 }else{
-                    return "#FFFFFF";
+                    return "#797979";
                 }                
             })
             .attr('stroke-opacity', "1")
@@ -141,7 +141,7 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
                     // return partycolors[party_abrev[fdTrendData2017[0]["leadingParty"]]];
                     return partycolors[fdTrendData2017[0]["leadingParty"]];
                 }else{
-                    return "#FFFFFF";
+                    return "#797979";
                 }
                 // enter the filtered data in abreviation and colors object
                 // return partycolors[party_abrev[fdTrendData2017[0]["leadingParty"]]];

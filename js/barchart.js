@@ -1,11 +1,12 @@
 var barcolors={
     "CPIM": "red",
-    "INC": "green",
+    "INC": "#166a2f",
     "CPI": "red",
     "IUML": "blue",
     "IND": "grey",
-    "Others": "grey",
-    "BJP": "#F47216"
+    "Others": "#797979",
+    "BJP": "#F47216",
+    "NPP": "#364586"
 }
 function stackedBar(selector, dataSource, stCode, props, tipSel) {
     var voteShare = (function() {
@@ -34,6 +35,7 @@ function stackedBar(selector, dataSource, stCode, props, tipSel) {
     .data(voteShare).enter()
     .append("div").attr("class", "block")
     .style("background-color", function(d,i){
+        // console.log(barcolors[d[props["label"]]])
         return barcolors[d[props["label"]]];
     })
     .style("width", function(d,i){

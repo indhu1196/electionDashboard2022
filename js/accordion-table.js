@@ -28,7 +28,7 @@ function closeAllBox(){
 }
 
 function drawAccTable(data, selector, labels, scode){
-  console.log(data)
+  // console.log(data)
 	d3.select(selector).html('');
     var table = d3.select(selector).append('table')
     var thead = table.append('thead')
