@@ -26,6 +26,7 @@ function stCarousel(selector, datasource, statn, stName, keySel, keySource, stc)
             
             html = '<div class="contituency-items">'
             html += '<h3> '+ stName +' | <span>'+constituencyname+'</span> </h3>'
+            html += '<div class="consWrap">'
             html += '<span class="leadingindicator">Winning</span>'
             html += '<div class="leadingcand">'
             html += '<h4>'+leadingname+' <span> ('+leadingparty+') </span></h4>'
@@ -36,6 +37,7 @@ function stCarousel(selector, datasource, statn, stName, keySel, keySource, stc)
             html += '<h4>'+trailingname+' </h4>'
             // html += '<h4>'+trailingname+' <span>'+trailingparty+'</span></h4>'
             //html += '<p>'+trailingmargin.toLocaleString('en-IN')+'</p>'
+            html += '</div>'
             html += '</div>'
             html += '</div>'        
             content += html

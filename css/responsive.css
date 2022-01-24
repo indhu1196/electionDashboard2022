@@ -45,10 +45,13 @@
     margin: 10px 0;
   }
   .contituency-items {
-    width: 90%;
+    width: 89%;
     max-width: 350px;
     min-width: 280px;
     margin: 0 auto;
+  }
+  .const-carousel .owl-carousel .owl-item {
+    margin: 0;
   }
   .contituency-items .leadingcand,
   .contituency-items .trailingcand {
@@ -142,6 +145,9 @@
   }
   .table {
     margin: 10px auto;
+  }
+  .owl-carousel .owl-wrapper-outer::after{
+    display: none;
   }
 }
 @media (min-width: 1000px) {

@@ -295,7 +295,7 @@ path.const:hover {
   right: 0;
   top: -4px;
   width: 70px;
-  height: 154px;
+  height: 204px;
   background-image: linear-gradient(to right, transparent, #fff);
 }
 .owl-carousel#owl-demo2 .owl-wrapper-outer::after {
@@ -1196,4 +1196,11 @@ p,
 }
 .popBox .popCount:nth-child(2) {
   margin: 0 0 15px 0;
+}
+.consWrap {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  height: 154px;
 }
