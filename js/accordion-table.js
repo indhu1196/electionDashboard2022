@@ -66,7 +66,7 @@ function drawAccTable(data, selector, labels, scode){
                     return d.value;
                   }else{
                     
-                    if((d.value).includes("+") || (d.value).includes("Others")) {
+                    if((d.value).includes("+")) {
                       return "<button class='alliance-list' onclick='displayAllianceList(\""+scode +"\", \""+d.value+"\")' data-party='"+d.value+"' style='margin-left:-18px'> + </button> "+d.value;
                     } else {
                       return d.value;
