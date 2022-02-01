@@ -67,6 +67,7 @@ function drawAccTable(data, selector, labels, scode){
                   }else{
                     
                     if((d.value).includes("+")) {
+                      // console.log(d.value);
                       return "<button class='alliance-list' onclick='displayAllianceList(\""+scode +"\", \""+d.value+"\")' data-party='"+d.value+"' style='margin-left:-18px'> + </button> "+d.value;
                     } else {
                       return d.value;
@@ -114,8 +115,15 @@ var alliance_2021 = {
   },
   "ga":{
     "INC +": ["Goa Forward Party"],
-    "TMC +": ["Maharashtrawadi Gomantak Party"],
-    "Others": ["Communist Party of India", "Nationalist Congress Party", "Shivsena", "Ambedkarite Party of India", "Bahujan Mukti Party", "Goa Praja Party", "Goa Suraksha Manch", "Goa Su-Raj Party", "Goa Vikas Party", "Niz Goenkar Revolution Front", "Samajwadi Janata Party (ChandraShekhar)", "United Goans Party", "Independent", "NOTA"]
+    "TMC +": ["Maharashtrawadi Gomantak Party"]
+  },
+  "pb":{
+    "SAD +": ["Bahujan Samaj Party"],
+    "BJP +": ["Punjab Lok Congress"]
+  },
+  "up": {
+    "BJP +": ["Apna Dal (Sonelal)", "Nishad Party", "Hissedari Morcha", "JD (U)", "AIMIM", "Azad Samaj Party"],
+    "SP +": ["RLD", "Apna Dal", "SBSP", "Mahan Dal", "Pragatisheel Samajwadi Party-Lohia", "Janwadi Socialist Party", "TMC", "NCP"]
   }
 }
 
@@ -129,8 +137,10 @@ jQuery.ajax({
     // drawAccTable(data["tn_share2021"], "#tn2021partywise-table", ["party", "won", "leading", "total"], "tn");
     // drawAccTable(data["kl_share2021"], "#kl2021partywise-table", ["party", "won", "leading", "total"], "kl");
     // drawAccTable(data["pd_share2021"], "#pd2021partywise-table", ["party", "won", "leading", "total"], "pd");
-    // drawAccTable(data["as_share2021"], "#as2021partywise-table", ["party", "won", "leading", "total"], "as");
+    drawAccTable(data["up_share2017"], "#up2017partywise-table", ["party", "won", "leading", "total"], "up");
+    drawAccTable(data["uk_share2017"], "#uk2017partywise-table", ["party", "won", "leading", "total"], "uk");
     drawAccTable(data["mn_share2017"], "#mn2017partywise-table", ["party", "won", "leading", "total"], "mn");
+    drawAccTable(data["pb_share2017"], "#pb2017partywise-table", ["party", "won", "leading", "total"], "pb");
     drawAccTable(data["ga_share2017"], "#ga2017partywise-table", ["party", "won", "leading", "total"], "ga");
   }
 });

@@ -19,7 +19,7 @@
         <div class="blackscreen" style="display: none;"></div>
         <div class="container">
             <header class="dash-header">
-                <h2>Assembly Elections 2021</h2>
+                <h2>Assembly Elections 2022</h2>
             </header>
             <ul class="nav nav-pills nav-justified stFilter">
                 <li><a class="dashfilters" value="Uttar Pradesh" data="up" data-toggle="pill" href="#up">Uttar Pradesh</a></li>
@@ -45,10 +45,14 @@
                                     <section class="section-block partywise-data">
                                         <header>
                                             <h3><span class="state_name">Uttar Pradesh |</span><span class="seatsHead">Seats</span></h3>
+                                            <h3 class="totSec"><span class="declaredSeats" id="up2017Seat"></span><span> / 403</span></h3>
                                         </header>
                                         <div class="partywisedata-charts">
-                                            <svg class="parliamentseats" id="up2017_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
-                                            <div id="up2017partywise-table" class="table map-table"></div>
+                                            <div>
+                                                <svg class="parliamentseats" id="up2017_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
+                                                <ul class="legends"></ul>
+                                            </div>
+                                            <div id="up2017partywise-table" class="table"></div>
                                         </div>
                                     </section>
                                     <section class="section-block seatshare">
@@ -114,14 +118,28 @@
                                                     </div>                            
                                                 </div>
                                             </div>
-                                            <div class="const-box">
-                                                <div class="winningCand">
-                                                    <p>Female Population</p>
-                                                    <h1 class="femalePop">Vijayakumar K S</h1>
+                                            <div class="const-box popBox">
+                                                <h2>Population</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femalePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="malePop">Vijayakumar K S</h1>
+                                                    </div>
                                                 </div>
-                                                <div class="winningCand">
-                                                    <p>Male Population</p>
-                                                    <h1 class="malePop">Vijayakumar K S</h1>
+                                                <h2 class="mt-3">Literacy</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femaleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="maleEdu">Vijayakumar K S</h1>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div id="up2017map-table" class="table map-table">
@@ -138,10 +156,14 @@
                                     <section class="section-block partywise-data">
                                         <header>
                                             <h3><span class="state_name">Uttar Pradesh |</span><span class="seatsHead">Seats</span></h3>
+                                            <h3 class="totSec"><span class="declaredSeats" id="up2022Seat"></span><span> / 69</span></h3>
                                         </header>
                                         <div class="partywisedata-charts">
-                                            <svg class="parliamentseats" id="up2021_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
-                                            <div id="up2021partywise-table" class="table"></div>
+                                            <div>
+                                                <svg class="parliamentseats" id="up2022_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
+                                                <ul class="legends"></ul>
+                                            </div>
+                                            <div id="up2022partywise-table" class="table"></div>
                                         </div>
                                     </section>
                                     <section class="section-block seatshare">
@@ -149,10 +171,10 @@
                                             <h4>seatshare</h4>
                                         </header>
                                         <figure>
-                                            <div id="up2021seatTip" class="barTip"></div>
+                                            <div id="up2022seatTip" class="barTip"></div>
                                             <div class="graphic">
                                               <div class="">
-                                                <div class="chart" id="up2021-seatShare"></div>
+                                                <div class="chart" id="up2022-seatShare"></div>
                                                 <ul class="legend" ></ul>
                                               </div>
                                             </div>
@@ -163,10 +185,10 @@
                                             <h4>partywise voteshare</h4>
                                         </header>
                                         <figure>
-                                            <div id="up2021voteTip" class="barTip"></div>
+                                            <div id="up2022voteTip" class="barTip"></div>
                                             <div class="graphic">
                                               <div class="">
-                                                <div class="chart" id="up2021-voteShare"></div>
+                                                <div class="chart" id="up2022-voteShare"></div>
                                                 <ul class="legend"></ul>
                                               </div>
                                             </div>
@@ -179,15 +201,15 @@
                                     </header>
                                     <div class="split-sub">
                                         <div class="left-map">
-                                            <div class="assembly-map up-map2021"></div>
+                                            <div class="assembly-map up-map2022"></div>
                                             <div class="const-filter">
                                                 <p>Select Constituency</p>
-                                                <Select class="const-list" id="upconstList2021"> 
+                                                <Select class="const-list" id="upconstList2022"> 
                                                     <option value="Cochin">COCHIN</option>
                                                 </Select>
                                             </div>
                                         </div>
-                                        <div class="right-const" id="up-2021">
+                                        <div class="right-const" id="up-2022">
                                             <div class="const-box">
                                                 <h1><span class="const_name"> Gummidipoondi</span><span class="resStatus">Result declared</span></h1>
                                                 <div class="cand-desc">
@@ -207,8 +229,29 @@
                                                     </div>                            
                                                 </div>
                                             </div>
-                                            <div id="up2021map-table" class="table map-table">
-                                                
+                                            <div class="const-box popBox">
+                                                <h2>Population</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femalePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="malePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                </div>
+                                                <h2 class="mt-3">Literacy</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femaleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="maleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -217,7 +260,7 @@
                         </div>
                     </div>
                     <section class="key-carousel">
-                        <div id="wb-keycarous" class="owl-carousel"> </div>
+                        <div id="up-keycarous" class="owl-carousel"> </div>
                     </section>
                 </div>
                 <div id="uk" class="tab-pane fade">
@@ -236,9 +279,13 @@
                                     <section class="section-block partywise-data">
                                         <header>
                                             <h3><span class="state_name">Uttarakhand |</span><span class="seatsHead">Seats</span></h3>
+                                            <h3 class="totSec"><span class="declaredSeats" id="uk2017Seat"></span><span> / 69</span></h3>
                                         </header>
                                         <div class="partywisedata-charts">
-                                            <svg class="parliamentseats" id="uk2017_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
+                                            <div>
+                                                <svg class="parliamentseats" id="uk2017_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
+                                                <ul class="legends"></ul>
+                                            </div>
                                             <div id="uk2017partywise-table" class="table map-table"></div>
                                         </div>
                                     </section>
@@ -305,14 +352,28 @@
                                                     </div>                            
                                                 </div>
                                             </div>
-                                            <div class="const-box">
-                                                <div class="winningCand">
-                                                    <p>Female Population</p>
-                                                    <h1 class="femalePop">Vijayakumar K S</h1>
+                                            <div class="const-box popBox">
+                                                <h2>Population</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femalePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="malePop">Vijayakumar K S</h1>
+                                                    </div>
                                                 </div>
-                                                <div class="winningCand">
-                                                    <p>Male Population</p>
-                                                    <h1 class="malePop">Vijayakumar K S</h1>
+                                                <h2 class="mt-3">Literacy</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femaleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="maleEdu">Vijayakumar K S</h1>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div id="uk2017map-table" class="table map-table">
@@ -329,10 +390,14 @@
                                     <section class="section-block partywise-data">
                                         <header>
                                             <h3><span class="state_name">Uttarakhand |</span><span class="seatsHead">Seats</span></h3>
+                                            <h3 class="totSec"><span class="declaredSeats" id="uk2022Seat"></span><span> / 69</span></h3>
                                         </header>
                                         <div class="partywisedata-charts">
-                                            <svg class="parliamentseats" id="uk2021_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
-                                            <div id="uk2021partywise-table" class="table"></div>
+                                            <div>
+                                                <svg class="parliamentseats" id="uk2022_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
+                                                <ul class="legends"></ul>
+                                            </div>
+                                            <div id="uk2022partywise-table" class="table"></div>
                                         </div>
                                     </section>
                                     <section class="section-block seatshare">
@@ -340,10 +405,10 @@
                                             <h4>seatshare</h4>
                                         </header>
                                         <figure>
-                                            <div id="uk2021seatTip" class="barTip"></div>
+                                            <div id="uk2022seatTip" class="barTip"></div>
                                             <div class="graphic">
                                               <div class="">
-                                                <div class="chart" id="uk2021-seatShare"></div>
+                                                <div class="chart" id="uk2022-seatShare"></div>
                                                 <ul class="legend" ></ul>
                                               </div>
                                             </div>
@@ -354,10 +419,10 @@
                                             <h4>partywise voteshare</h4>
                                         </header>
                                         <figure>
-                                            <div id="uk2021voteTip" class="barTip"></div>
+                                            <div id="uk2022voteTip" class="barTip"></div>
                                             <div class="graphic">
                                               <div class="">
-                                                <div class="chart" id="uk2021-voteShare"></div>
+                                                <div class="chart" id="uk2022-voteShare"></div>
                                                 <ul class="legend"></ul>
                                               </div>
                                             </div>
@@ -370,15 +435,15 @@
                                     </header>
                                     <div class="split-sub">
                                         <div class="left-map">
-                                            <div class="assembly-map uk-map2021"></div>
+                                            <div class="assembly-map uk-map2022"></div>
                                             <div class="const-filter">
                                                 <p>Select Constituency</p>
-                                                <Select class="const-list" id="ukconstList2021"> 
+                                                <Select class="const-list" id="ukconstList2022"> 
                                                     <option value="Cochin">COCHIN</option>
                                                 </Select>
                                             </div>
                                         </div>
-                                        <div class="right-const" id="uk-2021">
+                                        <div class="right-const" id="uk-2022">
                                             <div class="const-box">
                                                 <h1><span class="const_name"> Gummidipoondi</span><span class="resStatus">Result declared</span></h1>
                                                 <div class="cand-desc">
@@ -398,9 +463,30 @@
                                                     </div>                            
                                                 </div>
                                             </div>
-                                            <div id="uk2021map-table" class="table map-table">
-                                                
-                                            </div>
+                                            <div class="const-box popBox">
+                                                <h2>Population</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femalePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="malePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                </div>
+                                                <h2 class="mt-3">Literacy</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femaleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="maleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
                                         </div>
                                     </div>
                                 </section>
@@ -427,11 +513,12 @@
                                     <section class="section-block partywise-data">
                                         <header>
                                             <h3><span class="state_name">Manipur |</span><span class="seatsHead">Seats</span></h3>
+                                            <h3 class="totSec"><span class="declaredSeats" id="mn2017Seat"></span><span> / 60</span></h3>
                                         </header>
                                         <div class="partywisedata-charts">
                                             <div>
                                                 <svg class="parliamentseats" id="mn2017_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
-                                                <div class="legends"></div>
+                                                <ul class="legends"></ul>
                                             </div>
                                             <div id="mn2017partywise-table" class="table map-table"></div>
                                         </div>
@@ -537,10 +624,14 @@
                                     <section class="section-block partywise-data">
                                         <header>
                                             <h3><span class="state_name">Manipur |</span><span class="seatsHead">Seats</span></h3>
+                                            <h3 class="totSec"><span class="declaredSeats" id="mn2022Seat"></span><span> / 60</span></h3>
                                         </header>
                                         <div class="partywisedata-charts">
-                                            <svg class="parliamentseats" id="mn2021_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
-                                            <div id="mn2021partywise-table" class="table"></div>
+                                            <div>
+                                                <svg class="parliamentseats" id="mn2022_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
+                                                <ul class="legends"></ul>
+                                            </div>
+                                            <div id="mn2022partywise-table" class="table"></div>
                                         </div>
                                     </section>
                                     <section class="section-block seatshare">
@@ -548,10 +639,10 @@
                                             <h4>seatshare</h4>
                                         </header>
                                         <figure>
-                                            <div id="mn2021seatTip" class="barTip"></div>
+                                            <div id="mn2022seatTip" class="barTip"></div>
                                             <div class="graphic">
                                               <div class="">
-                                                <div class="chart" id="mn2021-seatShare"></div>
+                                                <div class="chart" id="mn2022-seatShare"></div>
                                                 <ul class="legend" ></ul>
                                               </div>
                                             </div>
@@ -562,10 +653,10 @@
                                             <h4>partywise voteshare</h4>
                                         </header>
                                         <figure>
-                                            <div id="mn2021voteTip" class="barTip"></div>
+                                            <div id="mn2022voteTip" class="barTip"></div>
                                             <div class="graphic">
                                               <div class="">
-                                                <div class="chart" id="mn2021-voteShare"></div>
+                                                <div class="chart" id="mn2022-voteShare"></div>
                                                 <ul class="legend"></ul>
                                               </div>
                                             </div>
@@ -578,15 +669,15 @@
                                     </header>
                                     <div class="split-sub">
                                         <div class="left-map">
-                                            <div class="assembly-map mn-map2021"></div>
+                                            <div class="assembly-map mn-map2022"></div>
                                             <div class="const-filter">
                                                 <p>Select Constituency</p>
-                                                <Select class="const-list" id="mnconstList2021"> 
+                                                <Select class="const-list" id="mnconstList2022"> 
                                                     <option value="Cochin">COCHIN</option>
                                                 </Select>
                                             </div>
                                         </div>
-                                        <div class="right-const" id="mn-2021">
+                                        <div class="right-const" id="mn-2022">
                                             <div class="const-box">
                                                 <h1><span class="const_name"> Gummidipoondi</span><span class="resStatus">Result declared</span></h1>
                                                 <div class="cand-desc">
@@ -606,8 +697,29 @@
                                                     </div>                            
                                                 </div>
                                             </div>
-                                            <div id="mn2021map-table" class="table map-table">
-                                                
+                                            <div class="const-box popBox">
+                                                <h2>Population</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femalePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="malePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                </div>
+                                                <h2 class="mt-3">Literacy</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femaleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="maleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -635,10 +747,14 @@
                                     <section class="section-block partywise-data">
                                         <header>
                                             <h3><span class="state_name">Punjab |</span><span class="seatsHead">Seats</span></h3>
+                                            <h3 class="totSec"><span class="declaredSeats" id="pb2017Seat"></span><span> / 117</span></h3>
                                         </header>
                                         <div class="partywisedata-charts">
-                                            <svg class="parliamentseats" id="pb2017_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
-                                            <div id="pb2017partywise-table" class="table map-table"></div>
+                                            <div>
+                                                <svg class="parliamentseats" id="pb2017_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
+                                                <ul class="legends"></ul>
+                                            </div>
+                                            <div id="pb2017partywise-table" class="table"></div>
                                         </div>
                                     </section>
                                     <section class="section-block seatshare">
@@ -673,6 +789,7 @@
                                 <section class="section-block geo-data">
                                     <header>
                                         <h3><span class="state_name">Punjab |</span><span class="seatsHead">Seats</span></h3>
+                                        <h3 class="totSec"><span class="declaredSeats" id="pb2017Seat"></span><span> / 117</span></h3>
                                     </header>
                                     <div class="split-sub">
                                         <div class="left-map">
@@ -704,14 +821,28 @@
                                                     </div>                            
                                                 </div>
                                             </div>
-                                            <div class="const-box">
-                                                <div class="winningCand">
-                                                    <p>Female Population</p>
-                                                    <h1 class="femalePop">Vijayakumar K S</h1>
+                                            <div class="const-box popBox">
+                                                <h2>Population</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femalePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="malePop">Vijayakumar K S</h1>
+                                                    </div>
                                                 </div>
-                                                <div class="winningCand">
-                                                    <p>Male Population</p>
-                                                    <h1 class="malePop">Vijayakumar K S</h1>
+                                                <h2 class="mt-3">Literacy</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femaleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="maleEdu">Vijayakumar K S</h1>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div id="pb2017map-table" class="table map-table">
@@ -797,6 +928,30 @@
                                                     </div>                            
                                                 </div>
                                             </div>
+                                            <div class="const-box popBox">
+                                                <h2>Population</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femalePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="malePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                </div>
+                                                <h2 class="mt-3">Literacy</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femaleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="maleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div id="pb2021map-table" class="table map-table">
                                                 
                                             </div>
@@ -826,9 +981,13 @@
                                     <section class="section-block partywise-data">
                                         <header>
                                             <h3><span class="state_name">Goa |</span><span class="seatsHead">Seats</span></h3>
+                                            <h3 class="totSec"><span class="declaredSeats" id="ga2017Seat"></span><span> / 40</span></h3>
                                         </header>
                                         <div class="partywisedata-charts">
-                                            <svg class="parliamentseats" id="ga2017_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
+                                            <div>
+                                                <svg class="parliamentseats" id="ga2017_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
+                                                <ul class="legends"></ul>
+                                            </div>
                                             <div id="ga2017partywise-table" class="table"></div>
                                         </div>
                                     </section>
@@ -895,14 +1054,28 @@
                                                     </div>                            
                                                 </div>
                                             </div>
-                                            <div class="const-box">
-                                                <div class="winningCand">
-                                                    <p>Female Population</p>
-                                                    <h1 class="femalePop">Vijayakumar K S</h1>
+                                            <div class="const-box popBox">
+                                                <h2>Population</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femalePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="malePop">Vijayakumar K S</h1>
+                                                    </div>
                                                 </div>
-                                                <div class="winningCand">
-                                                    <p>Male Population</p>
-                                                    <h1 class="malePop">Vijayakumar K S</h1>
+                                                <h2 class="mt-3">Literacy</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femaleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="maleEdu">Vijayakumar K S</h1>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div id="ga2017map-table" class="table map-table">
@@ -919,6 +1092,7 @@
                                     <section class="section-block partywise-data">
                                         <header>
                                             <h3><span class="state_name">Goa |</span><span class="seatsHead">Seats</span></h3>
+                                            <h3 class="totSec"><span class="declaredSeats" id="ga2022Seat"></span><span> / 40</span></h3>
                                         </header>
                                         <div class="partywisedata-charts">
                                             <svg class="parliamentseats" id="ga2021_parliamentseats" viewBox="0 0 375 200" preserveAspectRatio="xMinYMin" ></svg>
@@ -986,6 +1160,30 @@
                                                         <h1 class="trailingcandName">-</h1>
                                                         <span class="trailParty">-</span>   
                                                     </div>                            
+                                                </div>
+                                            </div>
+                                            <div class="const-box popBox">
+                                                <h2>Population</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femalePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="malePop">Vijayakumar K S</h1>
+                                                    </div>
+                                                </div>
+                                                <h2 class="mt-3">Literacy</h2>
+                                                <div class="popCount">
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/female.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="femaleEdu">Vijayakumar K S</h1>
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://thefederal.com/embed/GlobalDashboard-master/img/male.svg" alt="" width="30" height="auto" />
+                                                        <h1 class="maleEdu">Vijayakumar K S</h1>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div id="ga2021map-table" class="table map-table">

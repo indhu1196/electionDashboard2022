@@ -1,11 +1,13 @@
 var barcolors={
     "CPIM": "red",
     "INC": "#166a2f",
+    "INC+": "#166a2f",
     "CPI": "red",
     "IUML": "blue",
     "IND": "grey",
     "Others": "#797979",
     "BJP": "#F47216",
+    "BJP +": "#F47216",
     "NPP": "#364586"
 }
 function stackedBar(selector, dataSource, stCode, props, tipSel) {
@@ -43,9 +45,9 @@ function stackedBar(selector, dataSource, stCode, props, tipSel) {
     })
     .html(function(d,i){
         if(d[props["valueper"]] > 6) {
-            return '<span class="value">'+parseInt(d[props["valueper"]])+'% </span> <span class="label">'+d[props["label"]]+'</span>';
+            return '<span class="value">'+Math.round(d[props["valueper"]])+'% </span> <span class="label">'+d[props["label"]]+'</span>';
         } else {
-            return '<span class="value">'+parseInt(d[props["valueper"]])+'% </span>';
+            return '<span class="value">'+Math.round(d[props["valueper"]])+'% </span>';
         }
     })
     .on("mousemove", function(d){
@@ -56,7 +58,7 @@ function stackedBar(selector, dataSource, stCode, props, tipSel) {
           .style("left", x.left + (wide/2) + "px")
           .style("top", x.top - 28 + "px")
           .style("display", "inline-block")
-          .html(d[props["label"]] + ": " + parseInt(d[props["valueper"]])+ "%" );
+          .html(d[props["label"]] + ": " + Math.round(d[props["valueper"]])+ "%" );
     })
         .on("mouseout", function(d){ tooltip.style("display", "none");});
 }
@@ -195,6 +197,18 @@ stackedBar("#mn2017-voteShare", 'data/voteshare.json', "mn_share2017", {
     "label": "party",
     // "value": "votes"
 }, "#mn2017voteTip")
+stackedBar("#pb2017-seatShare", 'data/seatshare.json', "pb_share2017", {
+    "type": "Seatshare",
+    "valueper": "seat%",
+    "label": "party",
+    // "value": "votes"
+}, "#pb2017seatTip")
+stackedBar("#pb2017-voteShare", 'data/voteshare.json', "pb_share2017", {
+    "type": "Voteshare",
+    "valueper": "leading%",
+    "label": "party",
+    // "value": "votes"
+}, "#pb2017voteTip")
 stackedBar("#ga2017-seatShare", 'data/seatshare.json', "ga_share2017", {
     "type": "Seatshare",
     "valueper": "seat%",

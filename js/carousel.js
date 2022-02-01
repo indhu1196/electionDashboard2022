@@ -64,20 +64,26 @@ function stCarousel(selector, datasource, statn, stName, keySel, keySource, stc)
             var cand = "";
             var statn1 = stc+"-keycandidate"; 
             for(var j in data1[statn1]){
-                // console.log(data1)
+                console.log(data1)
                 // var img = data[statn][j].["img/profile.png"];
                 var keycandidatename = data1[statn1][j].candidatename;
                 var keycandidateplace = data1[statn1][j].constname;
                 var keycandidateparty = data1[statn1][j].candidateparty;
-                var keycandidateleading = data1[statn1][j].age;
-                var keycandidatevotes = data1[statn1][j].education
+                var keycandidatestatus = data1[statn1][j].status
+                // var keycandidateleading = data1[statn1][j].age;
+                // var keycandidatevotes = data1[statn1][j].education
                 
                 html = '<div class="candidate-items">'
                 html += '<img src="img/Key candidates/'+stc+'/'+keycandidatename+'.png" alt="">'
                 html += '<div class="cand-info">'
                 html += '<h4>'+ keycandidatename +'<span>'+ keycandidateparty +'</span></h4>'
                 html += '<p class="cand-cont">'+ keycandidateplace +'</p>'
-                html += '<p class="cand-votes"><span>'+keycandidateleading +'</span> '+keycandidatevotes +'</p>'
+                // if($("keycandidatestatus:contains('Won')")) {
+                //     $(".candidate-items .cand-votes::before").css("background-color", "#008000")
+                // } else {
+                //     $(".candidate-items .cand-votes::before").css("background-color", "red")
+                // }
+                html += '<p class="cand-votes ' + keycandidatestatus + '"><span class="bullet ' + keycandidatestatus + '"></span>'+keycandidatestatus +'</p>'
                 html += '</div>'
                 html += '</div>'
                 cand += html
@@ -93,7 +99,7 @@ function stCarousel(selector, datasource, statn, stName, keySel, keySource, stc)
 // stCarousel("#kl-carousel", "data/const2021data.json", "kl_conswise", "Kerala", "#kl-keycarous" ,"data/keycandidate.json", "kl");
 // stCarousel("#pd-carousel", "data/const2021data.json", "pd_conswise", "Puducherry", "#pd-keycarous" ,"data/keycandidate.json", "pd");
 
-stCarousel("#up-carousel", "data/const2017data.json", "up_conswise", "Uttar Pradesh", "#wb-keycarous" ,"data/keycandidate.json", "wb");
+stCarousel("#up-carousel", "data/const2017data.json", "up_conswise", "Uttar Pradesh", "#up-keycarous" ,"data/keycandidate.json", "up");
 stCarousel("#uk-carousel", "data/const2017data.json", "uk_conswise", "Uttar Pradesh", "#wb-keycarous" ,"data/keycandidate.json", "wb");
 stCarousel("#pb-carousel", "data/const2017data.json", "pb_conswise", "Punjab", "#wb-keycarous" ,"data/keycandidate.json", "wb");
 stCarousel("#mn-carousel", "data/const2017data.json", "mn_conswise", "Manipur", "#wb-keycarous" ,"data/keycandidate.json", "wb");

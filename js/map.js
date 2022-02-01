@@ -160,6 +160,8 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
                     if(d3.select(this).attr("data-constcode") == value) { //alert("CONST"+constNo);
                         // console.log(0)
                         d3.select(this).classed("focused", true);
+                    } else {
+                        
                     }
                 });
             }
@@ -276,7 +278,7 @@ drawAssemblyMap(".ga-map2017", 'data/const2017data.json', "ga_conswise", {
     mapsource: 'maps/goaMap.json', // add map topojson
     scale: 25500, // size adjust until it sits well
     center: [74.2, 15.4] // enter lat long from google of UP
-}, "#gaconstList2017", "#ga-2017", "data/economicFactors.json", "gaEconomic");
+}, "#gaconstList2017", "#ga-2017", "data/economicFactors.json", "gaEconomic", "North Goa");
 drawAssemblyMap(".pb-map2017", 'data/const2017data.json', "pb_conswise", {
     statecode: 'S30', // Statecode for map
     vhcode: 'pb', // state vehicle code
