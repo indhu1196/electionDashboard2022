@@ -41,7 +41,7 @@ function stackedBar(selector, dataSource, stCode, props, tipSel) {
         return barcolors[d[props["label"]]];
     })
     .style("width", function(d,i){
-        return d[props["valueper"]]+"%";
+        return Math.round(d[props["valueper"]])+"%";
     })
     .html(function(d,i){
         if(d[props["valueper"]] > 6) {

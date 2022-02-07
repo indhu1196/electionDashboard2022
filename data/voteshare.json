@@ -12,7 +12,7 @@
     
     "up_share2017": [{"party":"BJP","votes":40,"leading%":40,"status":"lead"},{"party":"SP","votes":22,"leading%":22,"status":"lead"},{"party":"BSP","votes":22.4,"leading%":22.4,"status":"lead"},{"party":"ADS","votes":1,"leading%":1,"status":"lead"},{"party":"INC","votes":6.3,"leading%":6.3,"status":"lead"},{"party":"IND","votes":2.6,"leading%":2.6,"status":"lead"},{"party":"Others","votes":5.7,"leading%":5.7,"status":"lead"}],
     "uk_share2017": [{"party":"BJP","leading%":46.51296937},{"party":"INC","leading%":33.49172967},{"party":"BSP","leading%":6.984894364},{"party":"Others","leading%":13.0104066}],    
-    "mn_share2017": [{"party":"BJP","leading%":36.28154827},{"party":"NPF","leading%":7.168383118},{"party":"NPP","leading%":5.050980865},{"party":"INC","leading%":35.10644009},{"party":"Others","leading%":16.39264766}],    
+    "mn_share2017": [{"party":"BJP","leading%":36.58154827},{"party":"NPF","leading%":7.168383118},{"party":"NPP","leading%":5.050980865},{"party":"INC","leading%":35.10644009},{"party":"Others","leading%":16.39264766}],    
     "pb_share2017": [{"party":"INC","leading%":38.50106576},{"party":"AAP","leading%":23.41659963},{"party":"SAD+","leading%":26.75928448},{"party":"BJP+","leading%":5.394462616},{"party":"Others","leading%":5.62858752}],    
-    "ga_share2017": [{"party":"BJP","leading%":32.48011386},{"party":"INC+","leading%":31.83288657},{"party":"AAP","leading%":6.267081125},{"party":"TMC+","leading%":11.27354248},{"party":"Others","leading%":18.14637596}]    
+    "ga_share2017": [{"party":"BJP","leading%":32.58011386},{"party":"INC+","leading%":31.83288657},{"party":"AAP","leading%":6.267081125},{"party":"TMC+","leading%":11.27354248},{"party":"Others","leading%":18.14637596}]    
 }

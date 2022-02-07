@@ -201,7 +201,7 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
                 var chosenOption = $(dropSelect).val();
                 var optValue = $(dropSelect + " option:selected").attr("data-id");
                 // d3.selectAll(".const").attr("stroke", "#ccc").attr("stroke-width", "0.2")
-                console.log(optValue)      
+                // console.log(optValue)      
                 var fdTrendData2017 = constwisetrenddata.filter(function(obj){
                     if(obj["constNo"] === parseInt(chosenOption)) {
                         focusFun(parseInt(chosenOption))
@@ -217,11 +217,13 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
         var fdTrendData2017 = constwisetrenddata.filter(function(obj){
             return obj["constNo"] === acno;
         })
-        // console.log(fdTrendData2017[0]["trailingCandidate"])
+        // console.log(constBox + " .trailingCandName:" + fdTrendData2017[0]["trailingCandidate"])
+        // var len = jQuery(constBox + " .candName").length;
+        // console.log(len);
+            d3.select(constBox + " .trailingcandName").html(fdTrendData2017[0]["trailingCandidate"]);
             d3.select(constBox + " .const_name").html(fdTrendData2017[0]["constituency"]);
             d3.select(constBox + " .status").html(fdTrendData2017[0]["status"]);
             d3.select(constBox + " .candName").html(fdTrendData2017[0]["leadingCandidate"] + " <span>("+[fdTrendData2017[0]["leadingParty"]]+")</span>");
-            d3.select(constBox + " .trailingCandName").html(fdTrendData2017[0]["trailingCandidate"]);
             d3.select(constBox + " .winMargin").html(fdTrendData2017[0]["margin"].toLocaleString('en-IN'));
     }
 
@@ -247,43 +249,99 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
 } // end of mapfunction
 
 
-drawAssemblyMap(".up-map2017", 'data/const2017data.json', "up_conswise", {
-    statecode: 'S24', // Statecode for map
-    vhcode: 'up', // state vehicle code
-    defaultconst: 21, // state vehicle code
-    mapsource: 'maps/UP.json', // add map topojson
-    scale: 2500, // size adjust until it sits well
-    center: [80.9462, 27.2] // enter lat long from google of UP
-}, "#upconstList2017", "#up-2017", "data/economicFactors.json", "upEconomic");
-drawAssemblyMap(".uk-map2017", 'data/const2017data.json', "uk_conswise", {
-    statecode: 'S02', // Statecode for map
-    vhcode: 'uk', // state vehicle code
-    defaultconst: 21, // state vehicle code
-    mapsource: 'maps/uttarakhand.json', // add map topojson
-    scale: 4500, // size adjust until it sits well
-    center: [78.4, 31.2] // enter lat long from google of UP
-}, "#ukconstList2017", "#uk-2017", "data/economicFactors.json", "ukEconomic");
-drawAssemblyMap(".mn-map2017", 'data/const2017data.json', "mn_conswise", {
-    statecode: 'S02', // Statecode for map
-    vhcode: 'mn', // state vehicle code
-    defaultconst: 21, // state vehicle code
-    mapsource: 'maps/manipur.json', // add map topojson
-    scale: 12500, // size adjust until it sits well
-    center: [93.9462, 25] // enter lat long from google of UP
-}, "#mnconstList2017", "#mn-2017", "data/economicFactors.json", "mnEconomic", "Imphal West");
-drawAssemblyMap(".ga-map2017", 'data/const2017data.json', "ga_conswise", {
-    statecode: 'S30', // Statecode for map
-    vhcode: 'ga', // state vehicle code
-    defaultconst: 21, // state vehicle code
-    mapsource: 'maps/goaMap.json', // add map topojson
-    scale: 25500, // size adjust until it sits well
-    center: [74.2, 15.4] // enter lat long from google of UP
-}, "#gaconstList2017", "#ga-2017", "data/economicFactors.json", "gaEconomic", "North Goa");
-drawAssemblyMap(".pb-map2017", 'data/const2017data.json', "pb_conswise", {
-    statecode: 'S30', // Statecode for map
-    vhcode: 'pb', // state vehicle code
-    defaultconst: 21, // state vehicle code
-    mapsource: 'maps/Punjab.json', // add map topojson
-    scale: 7500, // size adjust until it sits well
-    center: [75.84, 30.9] // enter lat long from google of UP
-}, "#pbconstList2017", "#pb-2017", "data/economicFactors.json", "pbEconomic");
+function responsive(maxWidth) {
+    if (maxWidth.matches) { 
+        
+        drawAssemblyMap(".mn-map2017", 'data/const2017data.json', "mn_conswise", {
+            statecode: 'S02', // Statecode for map
+            vhcode: 'mn', // state vehicle code
+            defaultconst: 21, // state vehicle code
+            mapsource: 'maps/manipur.json', // add map topojson
+            scale: 12500, // size adjust until it sits well
+            center: [93.9462, 24.7] // enter lat long from google of UP
+        }, "#mnconstList2017", "#mn-2017", "data/economicFactors.json", "mnEconomic", "Imphal West");
+
+        drawAssemblyMap(".uk-map2017", 'data/const2017data.json', "uk_conswise", {
+            statecode: 'S02', // Statecode for map
+            vhcode: 'uk', // state vehicle code
+            defaultconst: 21, // state vehicle code
+            mapsource: 'maps/uttarakhand.json', // add map topojson
+            scale: 4500, // size adjust until it sits well
+            center: [78.4, 31] // enter lat long from google of UP
+        }, "#ukconstList2017", "#uk-2017", "data/economicFactors.json", "ukEconomic");
+
+        drawAssemblyMap(".up-map2017", 'data/const2017data.json', "up_conswise", {
+            statecode: 'S24', // Statecode for map
+            vhcode: 'up', // state vehicle code
+            defaultconst: 21, // state vehicle code
+            mapsource: 'maps/UP.json', // add map topojson
+            scale: 3000, // size adjust until it sits well
+            center: [80.9462, 26.7] // enter lat long from google of UP
+        }, "#upconstList2017", "#up-2017", "data/economicFactors.json", "upEconomic");
+
+        drawAssemblyMap(".pb-map2017", 'data/const2017data.json', "pb_conswise", {
+            statecode: 'S30', // Statecode for map
+            vhcode: 'pb', // state vehicle code
+            defaultconst: 21, // state vehicle code
+            mapsource: 'maps/Punjab.json', // add map topojson
+            scale: 7500, // size adjust until it sits well
+            center: [75.4, 30.8] // enter lat long from google of UP
+        }, "#pbconstList2017", "#pb-2017", "data/economicFactors.json", "pbEconomic");
+
+        drawAssemblyMap(".ga-map2017", 'data/const2017data.json', "ga_conswise", {
+            statecode: 'S30', // Statecode for map
+            vhcode: 'ga', // state vehicle code
+            defaultconst: 21, // state vehicle code
+            mapsource: 'maps/goaMap.json', // add map topojson
+            scale: 25500, // size adjust until it sits well
+            center: [74.05, 15.3] // enter lat long from google of UP
+        }, "#gaconstList2017", "#ga-2017", "data/economicFactors.json", "gaEconomic", "North Goa");
+      
+    } else {
+        drawAssemblyMap(".up-map2017", 'data/const2017data.json', "up_conswise", {
+            statecode: 'S24', // Statecode for map
+            vhcode: 'up', // state vehicle code
+            defaultconst: 21, // state vehicle code
+            mapsource: 'maps/UP.json', // add map topojson
+            scale: 2500, // size adjust until it sits well
+            center: [80.9462, 27.2] // enter lat long from google of UP
+        }, "#upconstList2017", "#up-2017", "data/economicFactors.json", "upEconomic");
+        drawAssemblyMap(".uk-map2017", 'data/const2017data.json', "uk_conswise", {
+            statecode: 'S02', // Statecode for map
+            vhcode: 'uk', // state vehicle code
+            defaultconst: 21, // state vehicle code
+            mapsource: 'maps/uttarakhand.json', // add map topojson
+            scale: 4500, // size adjust until it sits well
+            center: [78.4, 31.2] // enter lat long from google of UP
+        }, "#ukconstList2017", "#uk-2017", "data/economicFactors.json", "ukEconomic");
+        drawAssemblyMap(".mn-map2017", 'data/const2017data.json', "mn_conswise", {
+            statecode: 'S02', // Statecode for map
+            vhcode: 'mn', // state vehicle code
+            defaultconst: 21, // state vehicle code
+            mapsource: 'maps/manipur.json', // add map topojson
+            scale: 12500, // size adjust until it sits well
+            center: [93.9462, 25] // enter lat long from google of UP
+        }, "#mnconstList2017", "#mn-2017", "data/economicFactors.json", "mnEconomic", "Imphal West");
+        drawAssemblyMap(".ga-map2017", 'data/const2017data.json', "ga_conswise", {
+            statecode: 'S30', // Statecode for map
+            vhcode: 'ga', // state vehicle code
+            defaultconst: 21, // state vehicle code
+            mapsource: 'maps/goaMap.json', // add map topojson
+            scale: 25500, // size adjust until it sits well
+            center: [74.08, 15.45] // enter lat long from google of UP
+        }, "#gaconstList2017", "#ga-2017", "data/economicFactors.json", "gaEconomic", "North Goa");
+        drawAssemblyMap(".pb-map2017", 'data/const2017data.json', "pb_conswise", {
+            statecode: 'S30', // Statecode for map
+            vhcode: 'pb', // state vehicle code
+            defaultconst: 21, // state vehicle code
+            mapsource: 'maps/Punjab.json', // add map topojson
+            scale: 7500, // size adjust until it sits well
+            center: [75.5, 31.5] // enter lat long from google of UP
+        }, "#pbconstList2017", "#pb-2017", "data/economicFactors.json", "pbEconomic");
+    }
+  }
+  
+   var maxWidth = window.matchMedia("(max-width: 600px)");
+   
+   responsive(maxWidth);
+   maxWidth.addListener(responsive);
