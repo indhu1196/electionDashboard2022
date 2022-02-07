@@ -67,36 +67,39 @@ $(document).ready(function(){
             jsonPath : keySource,
             jsonSuccess : customDataSuccess1
         });
-        function customDataSuccess1() {
+        function customDataSuccess1(data1) {
             // console.log(keySource)
-            var keyCandData = (function() {
-                var keyCandData = null;
-                jQuery.ajax({
-                    'async': false,
-                    'global': false,
-                    'dataType': 'json',
-                    'url': 'https://script.google.com/macros/s/AKfycbypUWDYB-4aIm5xbKL6lYMmo6D9evhAWVpIt_UOL7lYO5EwF93leS11erECfTuD3gE/exec',
-                    'success': function(data) {
-                        keyCandData = data;
-                        // console.log(JSON.stringify(data, null, 4));
-                    }
-                });
-                return keyCandData;
-            })();
+            // var keyCandData = (function() {
+            //     var keyCandData = null;
+            //     jQuery.ajax({
+            //         'async': false,
+            //         'global': false,
+            //         'dataType': 'json',
+            //         'url': 'https://script.google.com/macros/s/AKfycbypUWDYB-4aIm5xbKL6lYMmo6D9evhAWVpIt_UOL7lYO5EwF93leS11erECfTuD3gE/exec',
+            //         'success': function(data) {
+            //             keyCandData = data;
+            //             // console.log(JSON.stringify(data, null, 4));
+            //         }
+            //     });
+            //     return keyCandData;
+            // })();
             // console.log(keyCandData)
                 var cand = "";
-                var statn1 = stc+"_keycandidate"; 
-                var len = ((keyCandData["GoogleSheetData"][statn1]).length);
-                for(var j=0; j<len; j++){
-                    console.log(keyCandData["GoogleSheetData"][statn1])
-                    // var img = data[statn][j].["img/profile.png"];
-                    var keycandidatename = keyCandData["GoogleSheetData"][statn1][j]["candidatename"];
-                    var keycandidateplace = keyCandData["GoogleSheetData"][j]['constname'];
-                    var keycandidateparty = keyCandData["GoogleSheetData"][j]['candidateparty'];
-                    var keycandidatestatus = keyCandData["GoogleSheetData"][j]['status']
-                    // var keycandidateplace = data1[statn1][j].constname;
-                    // var keycandidateparty = data1[statn1][j].candidateparty;
-                    // var keycandidatestatus = data1[statn1][j].status
+                // var statn1 = stc+"_keycandidate"; 
+                var statn1 = stc+"-keycandidate"; 
+                // var len = ((keyCandData["GoogleSheetData"][statn1]).length);
+                // for(var j=0; j<len; j++){
+                for(var j in data1[statn1]){  
+                    // console.log(keyCandData["GoogleSheetData"][statn1])
+                    // // var img = data[statn][j].["img/profile.png"];
+                    // var keycandidatename = keyCandData["GoogleSheetData"][statn1][j]["candidatename"];
+                    // var keycandidateplace = keyCandData["GoogleSheetData"][j]['constname'];
+                    // var keycandidateparty = keyCandData["GoogleSheetData"][j]['candidateparty'];
+                    // var keycandidatestatus = keyCandData["GoogleSheetData"][j]['status'];
+                    var keycandidatename = data1[statn1][j].candidatename;
+                    var keycandidateplace = data1[statn1][j].constname;
+                    var keycandidateparty = data1[statn1][j].candidateparty;
+                    var keycandidatestatus = data1[statn1][j].status
                     // var keycandidateleading = data1[statn1][j].age;
                     // var keycandidatevotes = data1[statn1][j].education
                     
@@ -126,11 +129,11 @@ $(document).ready(function(){
     // stCarousel("#kl-carousel", "data/const2021data.json", "kl_conswise", "Kerala", "#kl-keycarous" ,"data/keycandidate.json", "kl");
     // stCarousel("#pd-carousel", "data/const2021data.json", "pd_conswise", "Puducherry", "#pd-keycarous" ,"data/keycandidate.json", "pd");
     
-    stCarousel("#up-carousel", "data/const2017data.json", "up_conswise", "Uttar Pradesh", "#up-keycarous" ," ", "up");
+    stCarousel("#up-carousel", "data/const2017data.json", "up_conswise", "Uttar Pradesh", "#up-keycarous" ,"data/keycandidate.json", "up");
     stCarousel("#uk-carousel", "data/const2017data.json", "uk_conswise", "Uttarakhand", "#uk-keycarous" ,"data/keycandidate.json", "uk");
     stCarousel("#pb-carousel", "data/const2017data.json", "pb_conswise", "Punjab", "#pb-keycarous" ,"data/keycandidate.json", "pb");
-    // stCarousel("#mn-carousel", "data/const2017data.json", "mn_conswise", "Manipur", "#wb-keycarous" ,"data/keycandidate.json", "wb");
-    // stCarousel("#ga-carousel", "data/const2017data.json", "ga_conswise", "Uttar Pradesh", "#wb-keycarous" ,"data/keycandidate.json", "wb");
+    stCarousel("#mn-carousel", "data/const2017data.json", "mn_conswise", "Manipur", "#mn-keycarous" ,"data/keycandidate.json", "mn");
+    stCarousel("#ga-carousel", "data/const2017data.json", "ga_conswise", "Uttar Pradesh", "#wb-keycarous" ,"data/keycandidate.json", "wb");
     
 })
 
