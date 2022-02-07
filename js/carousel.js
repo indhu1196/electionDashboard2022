@@ -88,7 +88,7 @@ $(document).ready(function(){
                 var statn1 = stc+"_keycandidate"; 
                 var len = ((keyCandData["GoogleSheetData"][statn1]).length);
                 for(var j=0; j<len; j++){
-                    console.log(len)
+                    console.log(keyCandData["GoogleSheetData"][statn1])
                     // var img = data[statn][j].["img/profile.png"];
                     var keycandidatename = keyCandData["GoogleSheetData"][statn1][j]["candidatename"];
                     var keycandidateplace = keyCandData["GoogleSheetData"][j]['constname'];
