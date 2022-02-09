@@ -337,13 +337,18 @@ path.const:hover {
   margin: 0;
   position: relative;
   line-height: 18px;
+  height: 55px;
 }
 
+.candidate-items h4 p {
+  min-height: 35px;
+}
 .candidate-items h4 span {
   display: block;
   font-size: 13px;
   font-weight: 400;
   color: #000;
+  min-height: 20px;
 }
 .candidate-items .cand-votes,
 .candidate-items .cand-age {

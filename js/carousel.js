@@ -1,6 +1,4 @@
 $(document).ready(function(){
-    
-
     function stCarousel(selector, datasource, statn, stName, keySel, keySource, stc) {
         // keySource = keyCandData
         // console.log(keySource)
@@ -46,15 +44,11 @@ $(document).ready(function(){
                 html += '</div>'
                 html += '</div>'        
                 content += html
-                
             }
-            
             $(selector).html(content);
         }
-    
         // keySource = "https://script.google.com/macros/s/AKfycbypUWDYB-4aIm5xbKL6lYMmo6D9evhAWVpIt_UOL7lYO5EwF93leS11erECfTuD3gE/exec";
         // keySource = keyCandData;
-    
         $(keySel).owlCarousel({
             itemsDesktop : [1199,4],
             itemsDesktopSmall : [980,3],
@@ -69,44 +63,45 @@ $(document).ready(function(){
         });
         function customDataSuccess1(data1) {
             // console.log(keySource)
-            // var keyCandData = (function() {
-            //     var keyCandData = null;
-            //     jQuery.ajax({
-            //         'async': false,
-            //         'global': false,
-            //         'dataType': 'json',
-            //         'url': 'https://script.google.com/macros/s/AKfycbypUWDYB-4aIm5xbKL6lYMmo6D9evhAWVpIt_UOL7lYO5EwF93leS11erECfTuD3gE/exec',
-            //         'success': function(data) {
-            //             keyCandData = data;
-            //             // console.log(JSON.stringify(data, null, 4));
-            //         }
-            //     });
-            //     return keyCandData;
-            // })();
-            // console.log(keyCandData)
+            var keyCandData = (function() {
+                var keyCandData = null;
+                jQuery.ajax({
+                    'async': false,
+                    'global': false,
+                    'dataType': 'json',
+                    'url': 'https://script.google.com/macros/s/AKfycbypUWDYB-4aIm5xbKL6lYMmo6D9evhAWVpIt_UOL7lYO5EwF93leS11erECfTuD3gE/exec',
+                    'success': function(data) {
+                        keyCandData = data;
+                        // console.log(JSON.stringify(data, null, 4));
+                    }
+                });
+                return keyCandData;
+            })();
+            console.log(keyCandData)
                 var cand = "";
                 // var statn1 = stc+"_keycandidate"; 
                 var statn1 = stc+"-keycandidate"; 
-                // var len = ((keyCandData["GoogleSheetData"][statn1]).length);
-                // for(var j=0; j<len; j++){
-                for(var j in data1[statn1]){  
-                    // console.log(keyCandData["GoogleSheetData"][statn1])
+                var len = ((keyCandData["GoogleSheetData"][statn1]).length);
+                for(var j=0; j<len; j++){
+                // for(var j in data1[statn1]){  
+                    console.log(keyCandData["GoogleSheetData"][statn1])
                     // // var img = data[statn][j].["img/profile.png"];
-                    // var keycandidatename = keyCandData["GoogleSheetData"][statn1][j]["candidatename"];
-                    // var keycandidateplace = keyCandData["GoogleSheetData"][j]['constname'];
-                    // var keycandidateparty = keyCandData["GoogleSheetData"][j]['candidateparty'];
-                    // var keycandidatestatus = keyCandData["GoogleSheetData"][j]['status'];
-                    var keycandidatename = data1[statn1][j].candidatename;
-                    var keycandidateplace = data1[statn1][j].constname;
-                    var keycandidateparty = data1[statn1][j].candidateparty;
-                    var keycandidatestatus = data1[statn1][j].status
+                    var keycandidatename = keyCandData["GoogleSheetData"][statn1][j]["candidatename"];
+                    var keycandidateplace = keyCandData["GoogleSheetData"][j]['constname'];
+                    var keycandidateparty = keyCandData["GoogleSheetData"][j]['candidateparty'];
+                    var keycandidatestatus = keyCandData["GoogleSheetData"][j]['status'];
+                    
+                    // var keycandidatename = data1[statn1][j].candidatename;
+                    // var keycandidateplace = data1[statn1][j].constname;
+                    // var keycandidateparty = data1[statn1][j].candidateparty;
+                    // var keycandidatestatus = data1[statn1][j].status
                     // var keycandidateleading = data1[statn1][j].age;
                     // var keycandidatevotes = data1[statn1][j].education
                     
                     html = '<div class="candidate-items">'
                     html += '<img src="img/Key candidates/'+stc+'/'+keycandidatename+'.png" alt="">'
                     html += '<div class="cand-info">'
-                    html += '<h4>'+ keycandidatename +'<span>'+ keycandidateparty +'</span></h4>'
+                    html += '<h4> <p>'+ keycandidatename +'</p><span>'+ keycandidateparty +'</span></h4>'
                     html += '<p class="cand-cont">'+ keycandidateplace +'</p>'
                     // if($("keycandidatestatus:contains('Won')")) {
                     //     $(".candidate-items .cand-votes::before").css("background-color", "#008000")
@@ -120,9 +115,7 @@ $(document).ready(function(){
                 }
                 $(keySel).html(cand);
             }
-        
     }
-    
     // stCarousel("#tn-carousel", "data/const2021data.json", "tn_conswise", "Tamil Nadu", "#tn-keycarous" ,"data/keycandidate.json", "tn");
     // stCarousel("#as-carousel", "data/const2021data.json", "as_conswise", "Assam", "#as-keycarous" ,"data/keycandidate.json", "as");
     // stCarousel("#up-carousel", "data/const2016data.json", "up_conswise", "Uttar Pradesh", "#wb-keycarous" ,"data/keycandidate.json", "wb");
