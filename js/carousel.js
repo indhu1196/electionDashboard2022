@@ -81,7 +81,7 @@ $(document).ready(function(){
                 var cand = "";
                 // var statn1 = stc+"_keycandidate"; 
                 var statn1 = stc+"-keycandidate"; 
-                var len = ((keyCandData["GoogleSheetData"][statn1]).length);
+                var len = keyCandData["GoogleSheetData"][statn1].length;
                 for(var j=0; j<len; j++){
                 // for(var j in data1[statn1]){  
                     console.log(keyCandData["GoogleSheetData"][statn1])
