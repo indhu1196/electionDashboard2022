@@ -15,16 +15,10 @@ var party_abrev = {
 
 //format to substitute data with color
 var partycolors = { 
-    "DMK":	"green",
-    "AIADMK":	"#ff9900",
-    "BJP":	"#F47216",
-    "SP":	"red",
-    "IND":	"red",
-    "Congress":	"red",
-    "IUML":	"grey",
-    "RLD":	"blue",
-    "NISHAD":	"green",
-    "INC": "#166a2f",
+    "BJP": "#F39200",
+    "SP": "#3AAA35",
+    "INC": "#3AAA35",
+    "BSP": "#36A9E1",
     "NPP": "#364586"
 }
 

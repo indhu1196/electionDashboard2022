@@ -69,7 +69,7 @@ $(document).ready(function(){
                     'async': false,
                     'global': false,
                     'dataType': 'json',
-                    'url': 'https://script.google.com/macros/s/AKfycbypUWDYB-4aIm5xbKL6lYMmo6D9evhAWVpIt_UOL7lYO5EwF93leS11erECfTuD3gE/exec',
+                    'url': 'https://script.googleusercontent.com/macros/echo?user_content_key=mB0ofaho6qm6wnGGGvpdlso513ykRmIKvlvkMmEsvSVvwDdd3lz4s3dUAEi2XmQGeVlIW6rK84c35V2JMrLKxlp_uw9h4P-4m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnAwpKSCk3yPOk7wWOF6qzjWd66K7kyZE4vcDooga29TaMyrrwmyDlOmqwrL8XPAD1T2uGbyoYPtsZuJIPr2tRpNtFod7EgpJEw&lib=MuzVZRMzsGAWxgxlnZELg-IYOidlTg8Sh',
                     'success': function(data) {
                         keyCandData = data;
                         // console.log(JSON.stringify(data, null, 4));
@@ -80,16 +80,21 @@ $(document).ready(function(){
             console.log(keyCandData)
                 var cand = "";
                 // var statn1 = stc+"_keycandidate"; 
-                var statn1 = stc+"-keycandidate"; 
-                var len = keyCandData["GoogleSheetData"][statn1].length;
+                var statn1 = stc+"_keycandidate"; 
+				console.log("Statename"+statn1);
+				var tempobj = keyCandData.content;
+				console.log("Sheet object:"+statn1);
+				 console.log("Sheet state data:"+tempobj[statn1]);
+				 console.log("Sheet Length:"+tempobj[statn1]);
+                var len = tempobj[statn1].length;
                 for(var j=0; j<len; j++){
                 // for(var j in data1[statn1]){  
-                    console.log(keyCandData["GoogleSheetData"][statn1])
+                   
                     // // var img = data[statn][j].["img/profile.png"];
-                    var keycandidatename = keyCandData["GoogleSheetData"][statn1][j]["candidatename"];
-                    var keycandidateplace = keyCandData["GoogleSheetData"][j]['constname'];
-                    var keycandidateparty = keyCandData["GoogleSheetData"][j]['candidateparty'];
-                    var keycandidatestatus = keyCandData["GoogleSheetData"][j]['status'];
+                    var keycandidatename = keyCandData["content"][statn1][j]["candidatename"];
+                    var keycandidateplace = keyCandData["content"][statn1][j]['constname'];
+                    var keycandidateparty = keyCandData["content"][statn1][j]['candidateparty'];
+                    var keycandidatestatus = keyCandData["content"][statn1][j]['status'];
                     
                     // var keycandidatename = data1[statn1][j].candidatename;
                     // var keycandidateplace = data1[statn1][j].constname;

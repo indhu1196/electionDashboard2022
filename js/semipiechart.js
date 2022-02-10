@@ -75,8 +75,13 @@ function legends(dt) {
         "IUML": "blue",
         "IND": "grey",
         "Others": "#797979",
-        "BJP": "#F47216",
-        "BJP +": "#F47216",
+
+        "BJP": "#F39200",
+        "BJP +": "#F39200",
+        "SP": "#3AAA35",
+        "SP +": "#3AAA35",
+        "INC": "#3AAA35",
+        "BSP": "#36A9E1",
         "NPP": "#364586"
     }
     var legend = "";
