@@ -69,7 +69,7 @@ $(document).ready(function(){
                     'async': false,
                     'global': false,
                     'dataType': 'json',
-                    'url': 'https://script.googleusercontent.com/macros/echo?user_content_key=mB0ofaho6qm6wnGGGvpdlso513ykRmIKvlvkMmEsvSVvwDdd3lz4s3dUAEi2XmQGeVlIW6rK84c35V2JMrLKxlp_uw9h4P-4m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnAwpKSCk3yPOk7wWOF6qzjWd66K7kyZE4vcDooga29TaMyrrwmyDlOmqwrL8XPAD1T2uGbyoYPtsZuJIPr2tRpNtFod7EgpJEw&lib=MuzVZRMzsGAWxgxlnZELg-IYOidlTg8Sh',
+                    'url': 'https://script.google.com/macros/s/AKfycbxaIRMSoSe41mQrN0l1BArPxzitdMJnwnw_AHtw6uUAhiXhyBG8C5cassGL_nJvPwM/exec',
                     'success': function(data) {
                         keyCandData = data;
                         // console.log(JSON.stringify(data, null, 4));
@@ -131,7 +131,7 @@ $(document).ready(function(){
     stCarousel("#uk-carousel", "data/const2017data.json", "uk_conswise", "Uttarakhand", "#uk-keycarous" ,"data/keycandidate.json", "uk");
     stCarousel("#pb-carousel", "data/const2017data.json", "pb_conswise", "Punjab", "#pb-keycarous" ,"data/keycandidate.json", "pb");
     stCarousel("#mn-carousel", "data/const2017data.json", "mn_conswise", "Manipur", "#mn-keycarous" ,"data/keycandidate.json", "mn");
-    stCarousel("#ga-carousel", "data/const2017data.json", "ga_conswise", "Uttar Pradesh", "#wb-keycarous" ,"data/keycandidate.json", "wb");
+    stCarousel("#ga-carousel", "data/const2017data.json", "ga_conswise", "Goa", "#ga-keycarous" ,"data/keycandidate.json", "ga");
     
 })
 

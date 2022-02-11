@@ -1,12 +1,17 @@
 //format to substitute data with abreviation
 var party_abrev = {
     "Bharatiya Janta Party":"BJP", 
-    "Suheldev Bhartiya Samaj Party":"SBSP", 
     "Bahujan Samaj Party":"BSP", 
     "Samajwadi Party":"SP", 
+    "Suheldev Bhartiya Samaj Party":"SBSP", 
+    "Apna Dal (Soneylal)":"APS",
     "Independent":"IND", 
-    "Indian National Congress":"Congress", 
-    "Apna Dal (Soneylal)":"APS", 
+    "Indian National Congress":"INC", 
+    "Rashtriya Lok Dal": "RLD",
+    "Aam Aadmi Party":  "AAP",
+    "Shiromani Akali Dal":  "SAD",
+    "Nishad Party": "NP",
+    
     "Dravida Munnetra Kazhagam":"DMK",
     "Dravida Munetra Kazhagam": "DMK", 
     "All India Anna Dravida Munnetra Kazhagam":"AIADMK",
@@ -107,7 +112,12 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
                 if(fdTrendData2017[0] !== undefined){
                     // enter the filtered data in abreviation and colors object
                     // return partycolors[party_abrev[fdTrendData2017[0]["leadingParty"]]];
-                    return partycolors[fdTrendData2017[0]["leadingParty"]];
+                    if(partycolors[fdTrendData2017[0]["leadingParty"]] != undefined) {
+                        return partycolors[fdTrendData2017[0]["leadingParty"]];
+                    } else {
+                        return "#797979"
+                    }
+                    
                 }else{
                     return "#797979";
                 }                
@@ -133,7 +143,11 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
                 // console.log(fdTrendData2017[0])
                 if(fdTrendData2017[0] !== undefined){
                     // return partycolors[party_abrev[fdTrendData2017[0]["leadingParty"]]];
-                    return partycolors[fdTrendData2017[0]["leadingParty"]];
+                    if(partycolors[fdTrendData2017[0]["leadingParty"]] != undefined) {
+                        return partycolors[fdTrendData2017[0]["leadingParty"]];
+                    } else {
+                        return "#797979"
+                    }
                 }else{
                     return "#797979";
                 }
@@ -262,7 +276,7 @@ function responsive(maxWidth) {
             mapsource: 'maps/uttarakhand.json', // add map topojson
             scale: 4500, // size adjust until it sits well
             center: [78.4, 31] // enter lat long from google of UP
-        }, "#ukconstList2017", "#uk-2017", "data/economicFactors.json", "ukEconomic");
+        }, "#ukconstList2017", "#uk-2017", "data/economicFactors.json", "ukEconomic", "Dehradun");
 
         drawAssemblyMap(".up-map2017", 'data/const2017data.json', "up_conswise", {
             statecode: 'S24', // Statecode for map
@@ -271,7 +285,7 @@ function responsive(maxWidth) {
             mapsource: 'maps/UP.json', // add map topojson
             scale: 3000, // size adjust until it sits well
             center: [80.9462, 26.7] // enter lat long from google of UP
-        }, "#upconstList2017", "#up-2017", "data/economicFactors.json", "upEconomic");
+        }, "#upconstList2017", "#up-2017", "data/economicFactors.json", "upEconomic", "Bijnor");
 
         drawAssemblyMap(".pb-map2017", 'data/const2017data.json', "pb_conswise", {
             statecode: 'S30', // Statecode for map
@@ -280,7 +294,7 @@ function responsive(maxWidth) {
             mapsource: 'maps/Punjab.json', // add map topojson
             scale: 7500, // size adjust until it sits well
             center: [75.4, 30.8] // enter lat long from google of UP
-        }, "#pbconstList2017", "#pb-2017", "data/economicFactors.json", "pbEconomic");
+        }, "#pbconstList2017", "#pb-2017", "data/economicFactors.json", "pbEconomic", "Tarn Taran");
 
         drawAssemblyMap(".ga-map2017", 'data/const2017data.json', "ga_conswise", {
             statecode: 'S30', // Statecode for map
@@ -299,7 +313,7 @@ function responsive(maxWidth) {
             mapsource: 'maps/UP.json', // add map topojson
             scale: 2500, // size adjust until it sits well
             center: [80.9462, 27.2] // enter lat long from google of UP
-        }, "#upconstList2017", "#up-2017", "data/economicFactors.json", "upEconomic");
+        }, "#upconstList2017", "#up-2017", "data/economicFactors.json", "upEconomic", "Bijnor");
         drawAssemblyMap(".uk-map2017", 'data/const2017data.json', "uk_conswise", {
             statecode: 'S02', // Statecode for map
             vhcode: 'uk', // state vehicle code
@@ -307,7 +321,7 @@ function responsive(maxWidth) {
             mapsource: 'maps/uttarakhand.json', // add map topojson
             scale: 4500, // size adjust until it sits well
             center: [78.4, 31.2] // enter lat long from google of UP
-        }, "#ukconstList2017", "#uk-2017", "data/economicFactors.json", "ukEconomic");
+        }, "#ukconstList2017", "#uk-2017", "data/economicFactors.json", "ukEconomic", "Dehradun");
         drawAssemblyMap(".mn-map2017", 'data/const2017data.json', "mn_conswise", {
             statecode: 'S02', // Statecode for map
             vhcode: 'mn', // state vehicle code
@@ -331,7 +345,7 @@ function responsive(maxWidth) {
             mapsource: 'maps/Punjab.json', // add map topojson
             scale: 7500, // size adjust until it sits well
             center: [75.5, 31.5] // enter lat long from google of UP
-        }, "#pbconstList2017", "#pb-2017", "data/economicFactors.json", "pbEconomic");
+        }, "#pbconstList2017", "#pb-2017", "data/economicFactors.json", "pbEconomic", "Tarn Taran");
     }
   }
   
