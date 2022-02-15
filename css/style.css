@@ -60,6 +60,12 @@
 .tf_wrap .dash-header h2.can-watchh2 {
   margin-bottom: 0;
 }
+.tf_wrap .upkeyWrap {
+  display: flex;
+}
+.upkeyWrap .stFilter {
+  margin: 7px 0 !important;
+}
 .tf_wrap .stFilter {
   width: 70%;
   margin: 0 auto;
@@ -356,7 +362,7 @@ path.const:hover {
   display: block;
   font-size: 13px;
   font-weight: 400;
-  color: #008000;
+  color: #f90;
   margin: 5px 0;
   position: relative;
   padding: 0 16px;
@@ -387,7 +393,7 @@ path.const:hover {
   left: 6px;
 } */
 .bullet {
-  background-color: #008000;
+  background-color: #f90;
   width: 6px;
   height: 6px;
   position: absolute;

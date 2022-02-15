@@ -158,6 +158,9 @@
     width: 100%;
     margin: 5px 0 10px 0;
   }
+  .tf_wrap .upkeyWrap {
+    flex-direction: column;
+  }
 }
 @media (min-width: 1000px) {
   .left-map {
