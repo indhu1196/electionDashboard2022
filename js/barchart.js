@@ -68,54 +68,6 @@ function stackedBar(selector, dataSource, stCode, props, tipSel) {
         .on("mouseout", function(d){ tooltip.style("display", "none");});
 }
 
-stackedBar("#tn2021-voteShare", 'data/voteshare.json', "tn_share2021", {
-    "type": "Voteshare",
-    "valueper": "leading%",
-    "label": "party",
-    // "value": "votes"
-}, "#tn2021voteTip")
-stackedBar("#tn2016-voteShare", 'data/voteshare.json', "tn_share2016", {
-    "type": "Voteshare",
-    "valueper": "leading%",
-    "label": "party",
-    // "value": "votes"
-}, "#tn2016voteTip")
-stackedBar("#tn2021-seatShare", 'data/seatshare.json', "tn_share2021", {
-    "type": "Seatshare",
-    "valueper": "seat%",
-    "label": "party",
-    // "value": "votes"
-}, "#tn2021seatTip")
-stackedBar("#tn2016-seatShare", 'data/seatshare.json', "tn_share2016", {
-    "type": "Seatshare",
-    "valueper": "seat%",
-    "label": "party",
-    // "value": "votes"
-}, "#tn2016seatTip")
-stackedBar("#kl2021-voteShare", 'data/voteshare.json', "kl_share2021", {
-    "type": "Voteshare",
-    "valueper": "leading%",
-    "label": "party",
-    // "value": "votes"
-}, "#kl2021voteTip")
-stackedBar("#kl2016-voteShare", 'data/voteshare.json', "kl_share2016", {
-    "type": "Voteshare",
-    "valueper": "leading%",
-    "label": "party",
-    // "value": "votes"
-}, "#kl2016voteTip")
-stackedBar("#kl2021-seatShare", 'data/seatshare.json', "kl_share2021", {
-    "type": "Seatshare",
-    "valueper": "seat%",
-    "label": "party",
-    // "value": "votes"
-}, "#kl2021seatTip")
-stackedBar("#kl2016-seatShare", 'data/seatshare.json', "kl_share2016", {
-    "type": "Seatshare",
-    "valueper": "seat%",
-    "label": "party",
-    // "value": "votes"
-}, "#kl2016seatTip")
 stackedBar("#up2017-seatShare", 'data/seatshare.json', "up_share2017", {
     "type": "Seatshare",
     "valueper": "seat%",
@@ -128,56 +80,6 @@ stackedBar("#up2017-voteShare", 'data/voteshare.json', "up_share2017", {
     "label": "party",
     // "value": "votes"
 }, "#up2017voteTip")
-stackedBar("#pd2016-seatShare", 'data/seatshare.json', "pd_share2016", {
-    "type": "Seatshare",
-    "valueper": "seat%",
-    "label": "party",
-    // "value": "votes"
-}, "#pd2016seatTip")
-stackedBar("#pd2016-voteShare", 'data/voteshare.json', "pd_share2021", {
-    "type": "Voteshare",
-    "valueper": "leading%",
-    "label": "party",
-    // "value": "votes"
-}, "#pd2016voteTip")
-stackedBar("#pd2021-seatShare", 'data/seatshare.json', "pd_share2021", {
-    "type": "Seatshare",
-    "valueper": "seat%",
-    "label": "party",
-    // "value": "votes"
-}, "#pd2021seatTip")
-stackedBar("#pd2021-voteShare", 'data/voteshare.json', "pd_share2021", {
-    "type": "Voteshare",
-    "valueper": "leading%",
-    "label": "party",
-    // "value": "votes"
-}, "#pd2021voteTip")
-stackedBar("#as2016-seatShare", 'data/seatshare.json', "as_share2016", {
-    "type": "Seatshare",
-    "valueper": "seat%",
-    "label": "party",
-    // "value": "votes"
-}, "#as2016seatTip")
-stackedBar("#as2016-voteShare", 'data/voteshare.json', "as_share2021", {
-    "type": "Voteshare",
-    "valueper": "leading%",
-    "label": "party",
-    // "value": "votes"
-}, "#as2016voteTip")
-stackedBar("#as2021-seatShare", 'data/seatshare.json', "as_share2021", {
-    "type": "Seatshare",
-    "valueper": "seat%",
-    "label": "party",
-    // "value": "votes"
-}, "#as2021seatTip")
-stackedBar("#as2021-voteShare", 'data/voteshare.json', "as_share2021", {
-    "type": "Voteshare",
-    "valueper": "leading%",
-    "label": "party",
-    // "value": "votes"
-}, "#as2021voteTip")
-
-
 stackedBar("#uk2017-seatShare", 'data/seatshare.json', "uk_share2017", {
     "type": "Seatshare",
     "valueper": "seat%",

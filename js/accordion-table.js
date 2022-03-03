@@ -58,7 +58,6 @@ function drawAccTable(data, selector, labels, scode){
           .enter()
           .append('td')
           .html(function (d) {
-             
               if(d.column === "party"){
                 if(d.value != 'Other') {
                   if($(selector).hasClass("map-table")){
@@ -72,7 +71,6 @@ function drawAccTable(data, selector, labels, scode){
                     } else {
                       return d.value;
                     }
-                    
                   }
                 } else {
                   return "<span style='margin-left:18px'>"+d.value+"</span>";
@@ -81,38 +79,10 @@ function drawAccTable(data, selector, labels, scode){
                 return d.value;
               }
           });
-    
-    return table;
-
-    
-    
-    
+    return table;        
 }
 
 var alliance_2021 = {
-  "tn":{
-    "AIADMK +": ["AIADMK","PMK","BJP","TMCM","PTMK","TMMK","MMK","AIMMK","PBK","PDK"],
-    "DMK +": ["DMK", "INC", "CPI", "CPIM", "VCK", "MDMK", "IUML", "KMDK", "MMK", "AIFB", "TVK", "MVK", "ATP"]
-  },
-  "kl":{
-    "CPIM +": ["CPI", "CPIM", "KCM", "JDS", "NCP", "LJD", "INL", "CS", "KSB", "JK"],
-    "INC +": ["INC", "IUML", "KCJ", "RSP", "NCK", "KCJ", "CMP", "RMPS", "Independent"]
-  },
-  "wb":{
-    "TMC +": ["AIADMK","PMK","BJP","TMCM","PTMK","TMMK","MMK","AIMMK","PBK","PDK"],
-    "BJP +": ["DMK", "INC", "CPI", "CPIM", "VCK", "MDMK", "IUML", "KMDK", "MMK", "AIFB", "TVK", "MVK", "ATP"],
-    "Others": ["DMK", "INC", "CPI", "CPIM", "VCK", "MDMK", "IUML", "KMDK", "MMK", "AIFB", "TVK", "MVK", "ATP"]
-  },
-  "as":{
-    "BJP +": ["AIADMK","PMK","BJP","TMCM","PTMK","TMMK","MMK","AIMMK","PBK","PDK"],
-    "INC +": ["DMK", "INC", "CPI", "CPIM", "VCK", "MDMK", "IUML", "KMDK", "MMK", "AIFB", "TVK", "MVK", "ATP"],
-    "Others": ["DMK", "INC", "CPI", "CPIM", "VCK", "MDMK", "IUML", "KMDK", "MMK", "AIFB", "TVK", "MVK", "ATP"]
-  },
-  "pd":{
-    "INC +": ["AIADMK","PMK","BJP","TMCM","PTMK","TMMK","MMK","AIMMK","PBK","PDK"],
-    "AINRC +": ["DMK", "INC", "CPI", "CPIM", "VCK", "MDMK", "IUML", "KMDK", "MMK", "AIFB", "TVK", "MVK", "ATP"],
-    "Others": ["DMK", "INC", "CPI", "CPIM", "VCK", "MDMK", "IUML", "KMDK", "MMK", "AIFB", "TVK", "MVK", "ATP"]
-  },
   "ga":{
     "INC +": ["Goa Forward Party"],
     "TMC +": ["Maharashtrawadi Gomantak Party"]
@@ -134,35 +104,10 @@ jQuery.ajax({
   'cache': false,
   'url': 'data/alliancetable.json',
   'success': function(data) {
-    // drawAccTable(data["tn_share2021"], "#tn2021partywise-table", ["party", "won", "leading", "total"], "tn");
-    // drawAccTable(data["kl_share2021"], "#kl2021partywise-table", ["party", "won", "leading", "total"], "kl");
-    // drawAccTable(data["pd_share2021"], "#pd2021partywise-table", ["party", "won", "leading", "total"], "pd");
     drawAccTable(data["up_share2017"], "#up2017partywise-table", ["party", "won", "leading", "total"], "up");
     drawAccTable(data["uk_share2017"], "#uk2017partywise-table", ["party", "won", "leading", "total"], "uk");
     drawAccTable(data["mn_share2017"], "#mn2017partywise-table", ["party", "won", "leading", "total"], "mn");
     drawAccTable(data["pb_share2017"], "#pb2017partywise-table", ["party", "won", "leading", "total"], "pb");
     drawAccTable(data["ga_share2017"], "#ga2017partywise-table", ["party", "won", "leading", "total"], "ga");
-  }
-});
-
-jQuery.ajax({
-  'async': false,
-  'global': false,
-  'dataType': 'json',
-  'cache': false,
-  'url': 'data/tabledata.json',
-  'success': function(data) {
-    // drawAccTable(data["tn_share2021"], "#tn2021map-table", ["party", "won", "leading", "total"], "tn");
-    // drawAccTable(data["tn_share2021"], "#tn2016partywise-table", ["party", "won","leading","total"]);
-    // drawAccTable(data["tn_share2021"], "#tn2016map-table", ["party", "won","leading","total"]);
-    // drawAccTable(data["kl_share2021"], "#kl2021map-table", ["party", "won", "leading", "total"], "kl");
-    // drawAccTable(data["kl_share2021"], "#kl2016partywise-table", ["party", "won","leading","total"]);
-    // drawAccTable(data["kl_share2021"], "#kl2016map-table", ["party", "won","leading","total"]);
-    // drawAccTable(data["pd_share2021"], "#pd2021map-table", ["party", "won", "leading", "total"], "pd");
-    // drawAccTable(data["pd_share2021"], "#pd2016partywise-table", ["party", "won","leading","total"]);
-    // drawAccTable(data["pd_share2021"], "#pd2016map-table", ["party", "won","leading","total"]);
-    // drawAccTable(data["as_share2021"], "#as2021map-table", ["party", "won", "leading", "total"], "as");
-    // drawAccTable(data["as_share2021"], "#as2016partywise-table", ["party", "won","leading","total"]);
-    // drawAccTable(data["as_share2021"], "#as2016map-table", ["party", "won","leading","total"]);
   }
 });
