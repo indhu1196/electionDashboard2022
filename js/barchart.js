@@ -25,7 +25,15 @@ function stackedBar(selector, dataSource, stCode, props, tipSel) {
             'cache': false,
             'url': dataSource,
             'success': function(data) {
-                voteShare = data[stCode];
+                console.log(dataSource)
+                if((dataSource == "data/voteshare.json") || (dataSource == "data/seatshare.json") ) {
+                    console.log(data[stCode]);
+                    voteShare = data[stCode];
+                } 
+                else {
+                    console.log(data["data"][stCode]["parties"]);
+                    voteShare = data["data"][stCode]["parties"];
+                }
             }
         });
         return voteShare;
@@ -128,3 +136,10 @@ stackedBar("#ga2017-voteShare", 'data/voteshare.json', "ga_share2017", {
     "label": "party",
     // "value": "votes"
 }, "#ga2017voteTip")
+
+// stackedBar("#mn2022-voteShare", 'https://thefederal.com/api/scraper.php?m=election2022&t=votescount', "up_conswise", {
+//     "type": "Voteshare",
+//     "valueper": "leading%",
+//     "label": "party",
+//     // "value": "votes"
+// }, "#mn2022voteTip")
