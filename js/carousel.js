@@ -16,7 +16,14 @@ function stCarousel(selector, datasource, statn, stName, keySel, keySource, stc,
     function customDataSuccess(data){ 
         // console.log(data["data"][0][statn])
         var content = "";
-        for(var i in data[statn]){   
+        for(var i in data[statn]){  
+            // var constituencyname = data["data"][0][statn][i].constituency;
+            // var leadingname = data["data"][0][statn][i]["leadingCandidate"];
+            // var leadingparty = data["data"][0][statn][i]["leadingParty"];
+            // var leadingmargin = data["data"][0][statn][i]["margin"];
+            // var trailingname = data["data"][0][statn][i]["trailingCandidate"];
+            // var trailingparty = data["data"][0][statn][i]["trailingParty"];
+            // var trailingmargin = data["data"][0][statn][i]["margin"]; 
             var constituencyname = data[statn][i].constituency;
             var leadingname = data[statn][i]["leadingCandidate"];
             var leadingparty = data[statn][i]["leadingParty"];
@@ -60,7 +67,7 @@ function stCarousel(selector, datasource, statn, stName, keySel, keySource, stc,
         jsonSuccess : customDataSuccess1
     });
     function customDataSuccess1(data) {
-        console.log(data[stc])
+        // console.log(data[stc])
         var cand = "";
         var statn = stc; 
         // console.log("Statename:"+statename);

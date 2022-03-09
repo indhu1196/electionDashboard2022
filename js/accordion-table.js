@@ -27,8 +27,28 @@ function closeAllBox(){
   d3.select(".blackscreen").style('display', 'none');
 }
 
-function drawAccTable(data, selector, labels, scode){
+function drawAccTable(dataSrc, stc, selector, labels, scode){
   // console.log(data)
+  var tableData = (function() {
+      tableData = null;
+      jQuery.ajax({
+          'async': false,
+          'global': false,
+          'cache': false,
+          'dataType': 'json',
+          'url': dataSrc,
+          'success': function(data) {
+              if(dataSrc == "https://thefederal.com/api/scraper.php?m=election2022&t=partywise") {
+                  // console.log(d["data"][stc]);
+                  tableData = data["data"][stc];
+              } else {
+                  // console.log(d[stc]);
+                  tableData = data[stc];
+              }
+          }
+      });
+      return tableData;
+  })();
 	d3.select(selector).html('');
     var table = d3.select(selector).append('table')
     var thead = table.append('thead')
@@ -42,7 +62,7 @@ function drawAccTable(data, selector, labels, scode){
           .text(function (column) { return column; });
 
     partyRow = tbody.selectAll('.partyRow')
-      .data(data)
+      .data(tableData)
       .enter()
       .append('tr')
       .attr("class", "partyRow");
@@ -97,17 +117,11 @@ var alliance_2021 = {
   }
 }
 
-jQuery.ajax({
-  'async': false,
-  'global': false,
-  'dataType': 'json',
-  'cache': false,
-  'url': 'data/alliancetable.json',
-  'success': function(data) {
-    drawAccTable(data["up_share2017"], "#up2017partywise-table", ["party", "won", "leading", "total"], "up");
-    drawAccTable(data["uk_share2017"], "#uk2017partywise-table", ["party", "won", "leading", "total"], "uk");
-    drawAccTable(data["mn_share2017"], "#mn2017partywise-table", ["party", "won", "leading", "total"], "mn");
-    drawAccTable(data["pb_share2017"], "#pb2017partywise-table", ["party", "won", "leading", "total"], "pb");
-    drawAccTable(data["ga_share2017"], "#ga2017partywise-table", ["party", "won", "leading", "total"], "ga");
-  }
-});
+
+drawAccTable("data/alliancetable.json", "up_share2017", "#up2017partywise-table", ["party", "won", "leading", "total"], "up");
+drawAccTable("data/alliancetable.json", "uk_share2017", "#uk2017partywise-table", ["party", "won", "leading", "total"], "uk");
+drawAccTable("data/alliancetable.json", "mn_share2017", "#mn2017partywise-table", ["party", "won", "leading", "total"], "mn");
+drawAccTable("data/alliancetable.json", "pb_share2017", "#pb2017partywise-table", ["party", "won", "leading", "total"], "pb");
+drawAccTable("data/alliancetable.json", "ga_share2017", "#ga2017partywise-table", ["party", "won", "leading", "total"], "ga");
+
+// drawAccTable("https://thefederal.com/api/scraper.php?m=election2022&t=partywise", "pu", "#mn2022partywise-table", ["party", "won", "leading", "total"], "mn");

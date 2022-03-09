@@ -39,8 +39,13 @@ function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, con
             'cache': false,
             'url': datasource,
             'success': function(data) {
-                // console.log(data)
-                constwisetrenddata = data[stCode];
+                // console.log(datasource)
+                if (datasource == "https://thefederal.com/api/scraper.php?m=election2022&t=constituency") {
+                    constwisetrenddata = data["data"][0][stCode]
+                } else {
+                    // console.log(data)
+                    constwisetrenddata = data[stCode];
+                }
             }
         });
         return constwisetrenddata;
@@ -306,6 +311,15 @@ function responsive(maxWidth) {
             scale: 25500, // size adjust until it sits well
             center: [74.05, 15.3] // enter lat long from google of UP
         }, "#gaconstList2017", "#ga-2017", "data/economicFactors.json", "gaEconomic", "North Goa");
+        
+        // drawAssemblyMap(".up-map2022", 'https://thefederal.com/api/scraper.php?m=election2022&t=constituency', "up_conswise", {
+        //     statecode: 'S24', // Statecode for map
+        //     vhcode: 'up', // state vehicle code
+        //     defaultconst: 21, // state vehicle code
+        //     mapsource: 'maps/UP.json', // add map topojson
+        //     scale: 3000, // size adjust until it sits well
+        //     center: [80.9462, 26.7] // enter lat long from google of UP
+        // }, "#upconstList2022", "#up-2022", "data/economicFactors.json", "upEconomic", "Bijnor");
       
     } else {
         drawAssemblyMap(".up-map2017", 'data/const2017data.json', "up_conswise", {
