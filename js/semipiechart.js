@@ -82,7 +82,12 @@ function legends(dt) {
         "SP +": "#3AAA35",
         "INC": "#3AAA35",
         "BSP": "#36A9E1",
-        "NPP": "#364586"
+        "NPF": "#28357F",
+        "NPP": "#EEA801",
+        "AAP": "#0474AB",
+        "SAD": "#3B2F85",
+        "SAD +": "#3B2F85",
+        "MGP": "#e6980b"
     }
     var legend = "";
     for(var i in dt){ 

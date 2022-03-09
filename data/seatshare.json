@@ -1,8 +1,8 @@
 
 {
   "up_share2017":[{"party":"BJP +","seats":323,"seat%":80.14888337468983,"status":"won"},{"party":"SP +","seats":51,"seat%":12.45508684863524,"status":"won"},{"party":"BSP","seats":19,"seat%":4.714640198511166,"status":"won"},{"party":"INC","seats":7,"seat%":1.73697270471464,"status":"won"},{"party":"Others","seats":3,"seat%":0.7444168734491315,"status":"won"}],
-  "uk_share2017":[{"party":"BJP","seats":57,"seat%":81.42857142857143,"status":"lead"},{"party":"INC","seats":11,"seat%":15.71428571428571,"status":"lead"},{"party":"BSP","seats":0,"seat%":0,"status":"lead"},{"party":"Others","seats":2,"seat%":2.857142857142857,"status":"lead"}],
+  "uk_share2017":[{"party":"BJP","seats":57,"seat%":81.42857142857143,"status":"lead"},{"party":"INC","seats":11,"seat%":15.71428571428571,"status":"lead"},{"party":"Others","seats":2,"seat%":2.857142857142857,"status":"lead"}],
   "pb_share2017":[{"party":"INC","seats":77,"seat%":65.41196581196581,"status":"lead"},{"party":"AAP","seats":20,"seat%":17.09401709401709,"status":"lead"},{"party":"SAD +","seats":15,"seat%":12.82051282051282,"status":"lead"},{"party":"BJP +","seats":3,"seat%":2.564102564102564,"status":"lead"},{"party":"Others","seats":2,"seat%":1.709401709401709,"status":"lead"}],
   "mn_share2017":[{"party":"BJP","seats":21,"seat%":35,"status":"lead"},{"party":"NPF","seats":4,"seat%":6.666666666666667,"status":"lead"},{"party":"NPP","seats":4,"seat%":6.666666666666667,"status":"lead"},{"party":"INC","seats":28,"seat%":46.16666666666667,"status":"lead"},{"party":"Others","seats":3,"seat%":5,"status":"lead"}],
-  "ga_share2017":[{"party":"BJP","seats":13,"seat%":32.5,"status":"lead"},{"party":"INC+","seats":20,"seat%":50,"status":"lead"},{"party":"AAP","seats":0,"seat%":0,"status":"lead"},{"party":"TMC+","seats":3,"seat%":7.4,"status":"lead"},{"party":"Others","seats":4,"seat%":10,"status":"lead"}]
+  "ga_share2017":[{"party":"BJP","seats":13,"seat%":32.5,"status":"lead"},{"party":"INC+","seats":20,"seat%":50,"status":"lead"},{"party":"MGP","seats":3,"seat%":7.4,"status":"lead"},{"party":"Others","seats":4,"seat%":10,"status":"lead"}]
 }

@@ -11,11 +11,9 @@ var party_abrev = {
     "Aam Aadmi Party":  "AAP",
     "Shiromani Akali Dal":  "SAD",
     "Nishad Party": "NP",
-    
-    "Dravida Munnetra Kazhagam":"DMK",
-    "Dravida Munetra Kazhagam": "DMK", 
-    "All India Anna Dravida Munnetra Kazhagam":"AIADMK",
-    "Indian Union Muslim League": "IUML"
+    "Maharashtrawadi Gomantak Party": "MGP",
+    "National People's Party": "NPP",
+    "Naga Peoples Front": "NPF"
 }
 
 //format to substitute data with color
@@ -24,7 +22,11 @@ var partycolors = {
     "SP": "#3AAA35",
     "INC": "#3AAA35",
     "BSP": "#36A9E1",
-    "NPP": "#364586"
+    "NPF": "#28357F",
+    "NPP": "#EEA801",
+    "AAP": "#0474AB",
+    "SAD": "#3B2F85",
+    "MGP": "#e6980b"
 }
 
 function drawAssemblyMap(selector, datasource, stCode ,settings, dropSelect, constBox, dsrc, dcode, defdist){

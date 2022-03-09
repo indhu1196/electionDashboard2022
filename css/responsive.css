@@ -82,6 +82,7 @@
   .poll-candidate-items {
     /* max-width: 310px; */
     margin: 0 auto;
+    width: 86%;
   }
   .turnout-items {
     width: 87%;

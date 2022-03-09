@@ -13,7 +13,12 @@ var barcolors={
     "SP +": "#3AAA35",
     "INC": "#3AAA35",
     "BSP": "#36A9E1",
-    "NPP": "#364586"
+    "NPF": "#28357F",
+    "NPP": "#EEA801",
+    "AAP": "#0474AB",
+    "SAD": "#3B2F85",
+    "SAD +": "#3B2F85",
+    "MGP": "#e6980b"
 }
 function stackedBar(selector, dataSource, stCode, props, tipSel) {
     var voteShare = (function() {
@@ -25,13 +30,13 @@ function stackedBar(selector, dataSource, stCode, props, tipSel) {
             'cache': false,
             'url': dataSource,
             'success': function(data) {
-                console.log(dataSource)
+                // console.log(dataSource)
                 if((dataSource == "data/voteshare.json") || (dataSource == "data/seatshare.json") ) {
-                    console.log(data[stCode]);
+                    // console.log(data[stCode]);
                     voteShare = data[stCode];
                 } 
                 else {
-                    console.log(data["data"][stCode]["parties"]);
+                    // console.log(data["data"][stCode]["parties"]);
                     voteShare = data["data"][stCode]["parties"];
                 }
             }
